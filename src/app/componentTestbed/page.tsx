@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import DNAAnalysis from "@/components/ui/DNAAnalysisSVG";
 import { StatsBox, SimpleStatsBox } from "@/components/ui/StatsBox";
+import FauxBokehAnimation from "@/components/backgroundAnimations/FauxBokehAnimation";
 
 export default function Page() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -30,8 +31,13 @@ export default function Page() {
         <div className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></div>
       </motion.div>
  */}
+        
+          <div className="absolute inset-0 w-screen h-screen bg-purple-500">
+          </div>
+            <FauxBokehAnimation />
       
       <div>
+        
         <ComponentTestbed />
         <DNAAnalysis className="w-full h-full" />
       </div>
