@@ -83,10 +83,9 @@ export function FluorinatedMaterialsSection({
                             are everywhere.
                           </p>
                           <p className="text-lg max-w-md pt-4 leading-relaxed text-gray-500">
-                            Ferment is a company creation studio building new businesses
-                            that rapidly translate biology into products that solve
-                            targeted problems across energy, materials, agriculture,
-                            health and beyond.
+                            Due to their unique properties, like heat resistance,
+                            water repellency, and chemical stability, they are highly
+                            sought after and used in a wide range of products.
                           </p>
                         </div>
                       </div>

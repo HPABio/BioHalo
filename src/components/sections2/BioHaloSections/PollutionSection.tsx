@@ -25,25 +25,26 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
       <div className="flex flex-col items-center justify-center relative">
       <h1
         className="absolute w-full pb-2 font-black font-arial text-6xl text-center lg:text-right
-        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent"
-      >
+        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize">
         <span className="">
-          But these compounds <br />
-          have a big toll on
+        for Public Health and<br /> the 
+        environment alike <br/>
+         The Consequences of<br /> pollution  can be<br />
             <span className="bg-gradient-to-t from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
-            <br/>Public Health
+            devastating<br/>
           </span>
         </span>
       </h1>
       <h1
-        className="w-full pb-2 font-black font-arial text-6xl text-center lg:text-right
-        bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent opacity-70">
+        className=" w-full pb-2 font-black font-arial text-6xl text-center lg:text-right
+        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize
+        blur-[1px] opacity-70">
         <span className="">
-          But these compounds <br /> 
-          have a big toll on
-          <span className="bg-gradient-to-tr from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent
-           blur-[3px] opacity-70">
-            <br/>Public Health
+        for Public Health and<br /> the 
+        environment alike <br/>
+         The Consequences of<br /> pollution  can be<br />
+            <span className="bg-gradient-to-t from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
+            devastating<br/>
           </span>
         </span>
       </h1>
@@ -57,10 +58,50 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
         {/* Left Column with Image */}
         <div className="w-full h-full relative">
           <motion.div
-            className="absolute w-[600px] h-[600px] top-[50%] left-[150%] lg:left-0 
+            className="absolute w-[600px] h-[600px] top-[35%] left-[65%] 
             -translate-y-[50%] -translate-x-[50%]"
             
           >
+             {/*LG Stats Circle in the back*/}
+             <div
+              className="hidden lg:absolute h-[66%] w-[66%] rounded-full
+              left-[20%] top-[-15%] -translate-x-[50%] -translate-y-[50%] 
+              overflow-hidden lg:flex items-center justify-center bg-red-500/0"
+              style={{
+                backgroundImage: `url(${WaterRepellantFabric.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+                  <div className="absolute w-full h-full inset-0 rounded-full overflow-hidden
+                    bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
+                    flex flex-col items-center justify-center"/>
+
+              <motion.div
+                className="absolute w-full h-full inset-0 rounded-full overflow-hidden
+                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
+              />
+
+              <StaticStatsBox
+                classNamesContainer="w-fit z-10 h-fit -mt-12"
+                classNamesTitle="lg-9xl w-[800px] mt-5 scale-[0.7] text-center lg:text-9xl md:text-8xl 
+                font-bold mb-6 bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
+                classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold -mt-14 capitalize"
+                key={2}
+                stat={stats[2]}
+                 /* scrollYProgress={
+                  useScroll({
+                    target: refLG,
+                    offset: ["start end", "end start"],
+                  }).scrollYProgress
+                }
+                scrollEndThreshold={0.2}
+                index={2}
+                text=""
+                ratchet={true} */ 
+              />
+
+            </div>
              
             {/* Big Stats Circle */}
             <div
@@ -100,46 +141,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
               />
             </div>
 
-      {/*LG Stats Circle in the back*/}
-              <div
-              className="hidden lg:absolute h-[66%] w-[66%] rounded-full left-[50%] top-[50%] 
-              -translate-x-[5o%] -translate-y-[50%] 
-              overflow-hidden lg:flex items-center justify-center bg-red-500/0"
-              style={{
-                backgroundImage: `url(${WaterRepellantFabric.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-                  <div className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                    bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
-                    flex flex-col items-center justify-center"/>
-
-              <motion.div
-                className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
-              />
-
-              <StaticStatsBox
-                classNamesContainer="w-fit z-10 h-fit -mt-12"
-                classNamesTitle="lg-9xl w-[800px] mt-5 scale-[0.7] text-center lg:text-9xl md:text-8xl 
-                font-bold mb-6 bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
-                classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold -mt-14 capitalize"
-                key={2}
-                stat={stats[2]}
-                 /* scrollYProgress={
-                  useScroll({
-                    target: refLG,
-                    offset: ["start end", "end start"],
-                  }).scrollYProgress
-                }
-                scrollEndThreshold={0.2}
-                index={2}
-                text=""
-                ratchet={true} */ 
-              />
-
-            </div>
+     
             {/*LG Stats Circle front left */}
             <div
               className="hidden lg:absolute h-[46%] w-[46%] rounded-full left-[50%] top-0 -translate-x-[160%] translate-y-[110%] 
@@ -193,8 +195,8 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
 
               {/*LG Stats Circle bottom right */}
             <div
-              className="hidden lg:absolute h-[33%] w-[33%] max-w-[600px] max-h-[600px] left-[50%] top-0 
-              translate-x-[125%] translate-y-[230%] 
+              className="hidden lg:absolute h-[33%] w-[33%] max-w-[600px] max-h-[600px] 
+              left-[87%] top-[100%]  -translate-x-[50%] -translate-y-[50%] 
               overflow-hidden lg:flex items-center justify-center bg-red-500/0 rounded-full"
               style={{
                 backgroundImage: `url(${MeshFabric.src})`,

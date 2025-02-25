@@ -15,6 +15,8 @@ import Image from "next/image";
 import FollowPath from "../ui/FollowPath";
 import logo from "@/assets/images/logo.png";
 
+
+
 export function HeroSection5({ className }: { className?: string }) {
   return (
     <section className={`relative w-full h-screen ${className}`}>
@@ -26,7 +28,7 @@ export function HeroSection5({ className }: { className?: string }) {
             backgroundRepeat: "no-repeat",
           }} />
       {/* Shader Container */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="hidden absolute inset-0 w-full h-full">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

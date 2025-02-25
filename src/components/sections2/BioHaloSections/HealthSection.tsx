@@ -78,7 +78,7 @@ export function HealthSectionImgLeft({ stats, className = "" }: HealthSectionPro
             />
             <StatsBox
               classNamesContainer="w-fit z-10 h-fit -mt-12"
-              classNamesTitle="lg-9xl w-[800px] mt-5 scale-[0.6] text-center lg:text-9xl md:text-8xl 
+              classNamesTitle="lg-9xl w-[800px] mt-5 text-center lg:text-9xl md:text-8xl 
               font-bold mb-6 bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
               classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold -mt-14 capitalize"
               key={3}
@@ -205,25 +205,24 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
       <div className="flex justify-start  w-full border-2 border-lightGrey/0 relative">
       <h1
         className="absolute w-full lg:w-[80%] xl:pb-10 pb-2 font-black font-arial text-6xl text-center lg:text-left
-        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent"
-      >
+        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize">
         <span className="">
-          But these compounds <br className="block lg:hidden xl:block" />
-          have a big toll on {" "}
+        But these special properties <br />
+         also make them <br /> hard to degrade and{" "}
             <span className="bg-gradient-to-t from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
-            <br/>Public Health
+            <br/>highly toxic 
           </span>
         </span>
       </h1>
       <h1
         className="w-full lg:w-[80%] xl:pb-10 pb-2 font-black font-arial text-6xl text-center lg:text-left
-        bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent opacity-70">
+        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize
+        blur-[1px] opacity-70">
         <span className="">
-          But these compounds <br className="block lg:hidden xl:block" /> 
-          have a big toll on {" "}
-          <span className="bg-gradient-to-tr from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent
-           blur-[3px] opacity-70">
-            <br/>Public Health
+        But these special properties <br />
+         also make them <br /> hard to degrade and{" "}
+            <span className="bg-gradient-to-t from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
+            <br/>highly toxic 
           </span>
         </span>
       </h1>
@@ -269,8 +268,8 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
               bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
             />
             <SimpleStatsBox
-              classNamesContainer="w-fit z-10 h-fit -mt-12"
-              classNamesTitle="w-[800px] mt-5 text-center text-5xl sm:text-6xl lg:text-8xl 
+              classNamesContainer="w-fit z-10 h-fit -mt-10"
+              classNamesTitle="w-[800px] mt-5 text-center text-7xl 
                 font-bold mb-6 bg-gradient-to-tl from-tealAccent to-lightGrey 
                 bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)]"
               classNamesSubTitle="text-center text-lightGrey/60 text-lg lg:text-2xl 
