@@ -10,13 +10,18 @@ import EnzymeImage2 from "@/assets/images/enzymeImage2.png";
 import BioFMonomer from "@/assets/images/BluePrintSVG/BioF-Monomer.svg";
 import EcoliTripletsSVG from "../../ui/EcoliTripletsSVG";
 import beaker from "@/assets/images/BluePrintSVG/beaker.svg";
+import BioHaloLogoOnly from "@/assets/BioHaloLogoOnly.svg";
+import logo from "@/assets/images/logo.png";
 
 interface WhatWeDoSectionProps {
   stats: any[];
   className?: string;
 }
 
-export function WhatWeDoSection({ stats, className = "" }: WhatWeDoSectionProps) {
+export function WhatWeDoSection({
+  stats,
+  className = "",
+}: WhatWeDoSectionProps) {
   const ref = useRef(null);
 
   return (
@@ -46,13 +51,12 @@ export function WhatWeDoSection({ stats, className = "" }: WhatWeDoSectionProps)
         scaleDuration={4}
         className="absolute bg-red-500/0 top-[13.2%] left-[1.2%]"
       />
-      
-      
+
       <div className="hidden lg:block absolute top-0 right-0 w-full bg-red-500/0">
         <Image
-          src={beaker}
+          src={BioHaloLogoOnly}
           alt="beaker"
-          className="absolute w-[40%] right-0 -translate-x-[20%] -translate-y-[20%] invert mix-blend-overlay opacity-50"
+          className="absolute w-[40%] right-0 -translate-x-[20%] -translate-y-[60%]"
         />
       </div>
 
@@ -60,8 +64,18 @@ export function WhatWeDoSection({ stats, className = "" }: WhatWeDoSectionProps)
         <h2 className="hidden font-black font-arial text-6xl bg-gradient-to-tl from-tealAccent to-mintAccent bg-clip-text text-transparent">
           we are revolutionizing fluorine chemistry
         </h2>
-        <h2 className="font-black font-arial text-6xl bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent pb-10">
-        At Biohalo <br /> we provide the world <br />
+        <h2 className="relative font-black font-arial text-6xl bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent pb-10">
+          <span className="font-poppins font-bold flex items-center -mb-14
+          text-black text-[clamp(110px,10vw,150px)] w-[560px]">
+            BioHalo
+            <Image
+              src={BioHaloLogoOnly}
+              alt="BioHalo Logo"
+              className="h-[1em] w-auto ml-4 lg:hidden"
+            />
+          </span>
+          <br />
+          provides the world <br />
           with a sustainable <br />
           <span className="bg-gradient-to-tr from-pinkAccent to-tealAccent/60 bg-clip-text text-transparent">
             PFAS{" "}
@@ -105,8 +119,8 @@ export function WhatWeDoSection({ stats, className = "" }: WhatWeDoSectionProps)
             className="w-full h-full object-cover blur-none "
           />
           <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 overflow-visible flex items-center justify-center">
-                  <EcoliTripletsSVG className="w-[100%] h-[100%] scale-[1.1] translate-x-[-3%] translate-y-[2%] opacity-1 invert mix-blend-overlay" />
-                </div>
+            <EcoliTripletsSVG className="w-[100%] h-[100%] scale-[1.1] translate-x-[-3%] translate-y-[2%] opacity-1 invert mix-blend-overlay" />
+          </div>
         </div>
 
         {/* Left Circle */}

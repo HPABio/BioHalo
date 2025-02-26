@@ -22,6 +22,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
     <section
       className={`${className}`}
     >
+      {/* Title  */}
       <div className="flex flex-col items-center justify-center relative">
       <h1
         className="absolute w-full pb-2 font-black font-arial text-6xl text-center lg:text-right
@@ -62,7 +63,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
             -translate-y-[50%] -translate-x-[50%]"
             
           >
-             {/*LG Stats Circle in the back*/}
+  {/* Stats Circle Contaminated Sites */}
              <div
               className="hidden lg:absolute h-[66%] w-[66%] rounded-full
               left-[20%] top-[-15%] -translate-x-[50%] -translate-y-[50%] 
@@ -103,48 +104,39 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
 
             </div>
              
-            {/* Big Stats Circle */}
+  {/* Big Stats Circle */}
             <div
               className="absolute w-full h-full rounded-full
-              bg-gradient-to-tr from-black via-teal-900 to-black blur-[40px] xl:blur-[20px] opacity-70 2xl:opacity-50 scale-[1]"
-            />
-            <div
-              className="absolute w-full h-full rounded-full scale-[1.1] 
-              bg-gradient-to-tr from-black via-teal-900 to-black blur-[50px] opacity-40 xl:opacity-70 2xl:opacity-50"
-            />
-            <div 
-                className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey drop-shadow-2xl"
-              >
+              bg-gradient-to-tr from-black via-teal-900 to-black">
+                          <div className="absolute w-full h-full rounded-full scale-[1.1] 
+                            bg-gradient-to-tr from-black via-teal-900 to-black blur-[50px] opacity-40 xl:opacity-70 2xl:opacity-50"
+                          />
+                          <div 
+                              className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey drop-shadow-2xl"
+                              style={{
+                                backgroundImage: `url(${IndustrialPollution.src})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }}
+                            >
+                          </div>
 
-              <Image
-                src={IndustrialPollution}
-                alt="WaterRepellantFabric"
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div
-              className="absolute w-[80%] h-[80%] bottom-0 left-[50%] translate-x-[-60%] -translate-y-[5%] rounded-full
-              bg-black/30 blur-[30px] mix-blend-color-burn"
-            />
-            <div
-              className="absolute w-[90%] h-[90%] bottom-0 left-[50%] translate-x-[-50%] -translate-y-[5%] rounded-full
-              bg-black/60 blur-[40px] mix-blend-overlay"
-            />
-            <div
-              className="absolute opacity-1 overflow-visible h-full w-full rounded-full left-0 top-0 flex items-center justify-center 
-              bg-gradient-to-tr from-black/50 via-black/20 to-tealAccent/0"
-            >
-              <Image
-                src={polutionEarth}
-                alt="BioHaloStep1"
-                className="w-[95%] scale-[1.2] translate-x-0 translate-y-[12%] bg-yellow-400/0"
-              />
-            </div>
+                          <div
+                            className="absolute opacity-1 overflow-visible h-full w-full rounded-full left-0 top-0 flex items-center justify-center"
+                          >
+                            <Image
+                              src={polutionEarth}
+                              alt="BioHaloStep1"
+                              className="w-full scale-[1.15] translate-x-0 translate-y-[12%] bg-yellow-400/0"
+                            />
+                          </div>
+              </div>
+            
 
      
-            {/*LG Stats Circle front left */}
+  {/*Stats Circle 4.4 million tons of PFAS released*/}
             <div
-              className="hidden lg:absolute h-[46%] w-[46%] rounded-full left-[50%] top-0 -translate-x-[160%] translate-y-[110%] 
+              className="hidden lg:absolute h-[46%] w-[46%] rounded-full 
               overflow-hidden items-center justify-center bg-red-500/0"
               style={{
                 backgroundImage: `url(${MeshFabric.src})`,
@@ -152,7 +144,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
                 backgroundPosition: "center",
               }}
             >
-             <div className="absolute w-full h-full inset-0 rounded-full overflow-hidden
+             <div className="absolute w-[50%] h-[50%] inset-0 rounded-full overflow-hidden
                     bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
                     flex flex-col items-center justify-center"/>
                   <motion.div
@@ -193,7 +185,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
              
 
 
-              {/*LG Stats Circle bottom right */}
+  {/*Stats Circle Degradation Time  */}
             <div
               className="hidden lg:absolute h-[33%] w-[33%] max-w-[600px] max-h-[600px] 
               left-[87%] top-[100%]  -translate-x-[50%] -translate-y-[50%] 
@@ -226,7 +218,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
                 
                   <StaticStatsBox
                     classNamesContainer="w-fit z-10 h-fit bg-gray-400/0 -mt-0"
-                    classNamesTitle="lg-8xl w-[800px] scale-[1] text-center text-6xl
+                    classNamesTitle="lg-8xl w-[800px]  text-center text-6xl
                     font-bold bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
                     classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold capitalize"
                     stat={stats[6]}
@@ -248,151 +240,7 @@ export function PollutionSection({ stats, className = "" }: PollutionSectionProp
             </div>
 
 
-            { /* MD Bottom left circle*/}
-          <div
-              className="absolute lg:hidden h-[66%] w-[66%] rounded-full left-[50%] top-0 
-              -translate-x-[125%] translate-y-[85%] 
-              2xl:w-[450px] 2xl:h-[450px] 
-              overflow-hidden flex items-center justify-center bg-red-500/0"
-              style={{
-                backgroundImage: `url(${MeshFabric.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-                  <div className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                    bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
-                    flex flex-col items-center justify-center"/>
-
-              <motion.div
-                ref={refMD}
-                className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
-              />
-              <StaticStatsBox
-                classNamesContainer="w-fit z-10 h-fit -mt-12"
-                classNamesTitle="lg-9xl w-[800px] mt-5 scale-[0.7] text-center lg:text-9xl md:text-8xl 
-                font-bold mb-6 bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
-                classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold -mt-14 capitalize"
-                stat={stats[2]}
-                /* scrollYProgress={
-                  useScroll({
-                    target: refLG,
-                    offset: ["start end", "end start"],
-                  }).scrollYProgress
-                }
-                scrollEndThreshold={0.6}
-                index={2}
-                text=""
-                ratchet={true} */
-              />
-            </div>
-            
-            {/*MD Stats Circle top */}
-            <div
-                          className="lg:hidden absolute h-[46%] w-[46%] rounded-full left-[50%] top-0 
-                          translate-x-[10%] -translate-y-[55%] 
-                          overflow-hidden flex items-center justify-center bg-red-500/0"
-                          style={{
-                            backgroundImage: `url(${MeshFabric.src})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                          }}
-                        >
-                        <div className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
-                                flex flex-col items-center justify-center"/>
-                              <motion.div
-                                className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
-                                "/>
-                            <div className="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center 2xl:scale-[1.2]">
-                              <StaticStatsBox
-                                classNamesContainer="w-fit z-10 h-fit bg-gray-400/0 -mt-8 -ml-4 "
-                                classNamesTitle="lg-8xl text-center text-9xl leading-none scale-[0.7]
-                                font-bold bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent"
-                                classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold capitalize -mt-8"
-                                stat={stats[7]}
-                                /* scrollYProgress={
-                                  useScroll({
-                                    target: refLG,
-                                    offset: ["start end", "end start"],
-                                  }).scrollYProgress
-                                }
-                                scrollEndThreshold={0.6}
-                                index={7}
-                                text=""
-                                ratchet={false} */
-                                /> 
-                                <h2 className="text-center text-lightGrey/60 text-1xl font-bold lowerfcase mt-0">
-                                Amount of Released  
-                                <br />
-                                Fluorinated materials <br />
-                                by 2053
-                              </h2>
-                                <h2 className="font-bold pb-4 w-[800px] text-center text-5xl -mt-10
-                                  bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent">
-                                    </h2>
-                            </div>
-            </div>
-
-              {/*MD Stats Circle bottom right */}
-            <div
-              className="lg:hidden absolute h-[33%] w-[33%] max-w-[600px] max-h-[600px] left-[50%] top-0 
-              translate-x-[50%] translate-y-[230%] 
-              overflow-hidden flex items-center justify-center bg-red-500/0 rounded-full"
-              style={{
-                backgroundImage: `url(${MeshFabric.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div
-                className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
-              />
-              <div
-                className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
-              />
-              {/* Stats right */}
-              <motion.div
-                    className="absolute w-full h-full inset-0 rounded-full overflow-hidden
-                    bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply
-                    "/>
-                <div className="absolute w-full h-full top-0 left-0 -mt-1 bg-green-40 flex flex-col items-center justify-center">
-                  <h2 className="text-center text-lightGrey/60 text-lg font-bold capitalize">
-                    Minimum 
-                    <br />
-                    Degradation Time
-                  </h2>
-                
-                  <StaticStatsBox
-                    classNamesContainer="w-fit z-10 h-fit bg-gray-400/0 -mt-0"
-                    classNamesTitle="lg-8xl w-[800px] scale-[1] text-center text-6xl
-                    font-bold bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
-                    classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold capitalize"
-                    stat={stats[6]}
-                    /* scrollYProgress={
-                      useScroll({
-                        target: refLG,
-                        offset: ["start end", "end start"],
-                      }).scrollYProgress
-                    }
-                    scrollEndThreshold={0.7}
-                    index={6}
-                    text=""
-                    ratchet={false} */
-                    />
-                    <h2 className="font-bold pb-4 w-[800px] text-center text-3xl -mt-4
-                      bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent">
-                        years</h2>
-            </div>
-            </div>
-            
-            
-            
-            
+  
 
             
         </motion.div>
@@ -551,11 +399,7 @@ export function PollutionSectionBACKUP({ stats, className = "" }: PollutionSecti
             {/* Big Stats Circle */}
             <div
               className="absolute w-full h-full rounded-full
-              bg-gradient-to-tr from-black via-teal-900 to-black blur-[40px] xl:blur-[20px] opacity-70 2xl:opacity-50 scale-[1]"
-            />
-            <div
-              className="absolute w-full h-full rounded-full scale-[1.1] 
-              bg-gradient-to-tr from-black via-teal-900 to-black blur-[50px] opacity-40 xl:opacity-70 2xl:opacity-50"
+              bg-gradient-to-tr from-black via-teal-900 to-black blur-[40px] xl:blur-[20px] opacity-70 2xl:opacity-50 "
             />
             <div 
                 className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey drop-shadow-2xl"
@@ -567,23 +411,16 @@ export function PollutionSectionBACKUP({ stats, className = "" }: PollutionSecti
                 className="object-cover w-full h-full"
               />
             </div>
-            <div
-              className="absolute w-[80%] h-[80%] bottom-0 left-[50%] translate-x-[-60%] -translate-y-[5%] rounded-full
-              bg-black/30 blur-[30px] mix-blend-color-burn"
-            />
-            <div
-              className="absolute w-[90%] h-[90%] bottom-0 left-[50%] translate-x-[-50%] -translate-y-[5%] rounded-full
-              bg-black/60 blur-[40px] mix-blend-overlay"
-            />
+
             <div
               className="absolute opacity-1 overflow-visible h-full w-full rounded-full left-0 top-0 flex items-center justify-center 
               bg-gradient-to-tr from-black/50 via-black/20 to-tealAccent/0"
+              style={{
+                backgroundImage: `url(${polutionEarth.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <Image
-                src={polutionEarth}
-                alt="BioHaloStep1"
-                className="w-[95%] scale-[1.2] translate-x-0 translate-y-[12%] bg-yellow-400/0"
-              />
             </div>
 
 
@@ -671,7 +508,7 @@ export function PollutionSectionBACKUP({ stats, className = "" }: PollutionSecti
                 
                   <StaticStatsBox
                     classNamesContainer="w-fit z-10 h-fit bg-gray-400/0 -mt-0"
-                    classNamesTitle="lg-8xl w-[800px] scale-[1] text-center text-6xl
+                    classNamesTitle="lg-8xl w-[800px]  text-center text-6xl
                     font-bold bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
                     classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold capitalize"
                     stat={stats[6]}
@@ -814,7 +651,7 @@ export function PollutionSectionBACKUP({ stats, className = "" }: PollutionSecti
                 
                   <StaticStatsBox
                     classNamesContainer="w-fit z-10 h-fit bg-gray-400/0 -mt-0"
-                    classNamesTitle="lg-8xl w-[800px] scale-[1] text-center text-6xl
+                    classNamesTitle="lg-8xl w-[800px]  text-center text-6xl
                     font-bold bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
                     classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold capitalize"
                     stat={stats[6]}

@@ -7,6 +7,7 @@ import Pharma from "@/assets/images/BluePrintSVG/Pharma.svg";
 import MeshFabric from "@/assets/images/Mesh-fabric.png";
 import Droplets1 from "@/assets/images/Droplets1.jpg";
 import EcoliTripletsSVG from "../../ui/EcoliTripletsSVG";
+import BGFabricTealPink from "@/assets/images/BGImagesTest/BGFabricTealPink.png";
 
 
 interface HealthSectionProps {
@@ -231,7 +232,7 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
 {/*Two Columns HEALTH */}
       <div className="flex flex-col lg:flex-row-reverse justify-end w-full border-2 border-lightGrey/0 lg:pr-12 px-4">
         {/* Right Column with Circle */}
-        <div className="w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
+        <div className="hidden w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
             mx-auto lg:translate-x-[10%] relative lg:mt-0 mt-20">
           <div className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
             <Image
@@ -283,6 +284,78 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
             />
           </div>
         </div>
+
+         {/* Alt Right Column with Circle */}
+         <div className="w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
+            mx-auto lg:translate-x-[10%] relative lg:mt-0 mt-20">
+                    {/* small circle */}
+                      <div
+                    className="absolute w-[40%] aspect-square lg:h-[350px] lg:w-[350px] 
+                        rounded-full right-[64%] top-[30%] lg:top-[50%] 
+                        lg:translate-y-[-50%]
+                        overflow-hidden flex items-center justify-center"
+                    style={{
+                      backgroundImage: `url(${BGFabricTealPink.src})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    {/* <div
+                      className="absolute w-full h-full inset-0 rounded-full overflow-hidden
+                      bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
+                    /> */}
+                    
+                  </div>
+          <div className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
+            <Image
+              src={WaterRepellantFabric}
+              alt="WaterRepellantFabric"
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
+          </div>
+          
+          <div className="absolute h-full w-full rounded-full left-0 top-0 overflow-hidden 
+              flex flex-col items-center justify-center">
+            <div className="relative w-[80%] h-[80%] flex items-center justify-center">
+              <Image
+                src={Pharma}
+                alt="BioHaloStep1"
+                className="w-full h-full object-contain -translate-y-[7%]"
+              />
+            </div>
+            
+            <motion.div
+              ref={ref4}
+              className="absolute w-full h-full inset-0 rounded-full overflow-hidden 
+                bg-gradient-to-t from-black via-black/10 to-transparent"
+            />
+
+            <div className="absolute top-[63%] -translate-y-[50%] w-full">
+              <SimpleStatsBox
+                classNamesContainer="w-fit mx-auto z-20"
+                classNamesTitle="text-center text-6xl lg:text-9xl
+                  font-bold mb-4 bg-gradient-to-tl from-tealAccent to-lightGrey 
+                  bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)]"
+                classNamesSubTitle="text-center text-lightGrey/80 text-lg lg:text-4xl
+                  font-bold capitalize -mt-8"
+                stat={stats[3]}
+                scrollYProgress={scrollYProgress}
+                scrollEndThreshold={0.4}
+                index={3}
+                text=""
+                ratchet={false}
+              />
+            </div>
+          </div>
+          
+          
+        </div>
+
+
+
+
+
         {/* Left Column with Text */}
         <div className="w-full lg:w-1/2 space-y-8 lg:space-y-12 mt-8 lg:mt-16">
           <div className="space-y-4">

@@ -12,6 +12,7 @@ import IconCarousel from "@/components/ui/IconCarousel";
 
 import { FeatureOfPFAS } from "@/components/sections2/BioHaloSections/FeatureOfPFAS";
 import { PollutionSection } from "@/components/sections2/BioHaloSections/PollutionSection";
+import { PollutionSection2 } from "@/components/sections2/BioHaloSections/PollutionSection2";
 import { HealthSectionImgLeft, HealthSectionImgRight } from "@/components/sections2/BioHaloSections/HealthSection";
 import { PlatformFeaturesSection } from "@/components/sections2/BioHaloSections/PlatformFeaturesSection";
 import { BentoSection2 } from "./sections2/BentoSection2";
@@ -25,6 +26,7 @@ const MemoizedHeroSection5 = memo(HeroSection5);
 const MemoizedFluorinatedMaterialsSection = memo(FluorinatedMaterialsSection);
 const MemoizedFeatureOfPFAS = memo(FeatureOfPFAS);
 const MemoizedPollutionSection = memo(PollutionSection);
+const MemoizedPollutionSection2 = memo(PollutionSection2);
 const MemoizedHealthSectionImgRight = memo(HealthSectionImgRight);
 const MemoizedWhatWeDoSection = memo(WhatWeDoSection);
 const MemoizedPlatformFeaturesSection = memo(PlatformFeaturesSection);
@@ -168,7 +170,7 @@ export const Showcase = () => {
       </section>
 
       <section id="pollution" className="min-h-screen">
-        <MemoizedPollutionSection
+        <MemoizedPollutionSection2
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  
                px-14 relative overflow-visible z-10"
@@ -176,7 +178,7 @@ export const Showcase = () => {
       </section>
 
       <section id="feature-pfas">
-        <MemoizedFeatureOfPFAS className="w-full h-screen" />
+        <MemoizedFeatureOfPFAS className="w-full min-h-[100vh]" />
       </section>
 
       

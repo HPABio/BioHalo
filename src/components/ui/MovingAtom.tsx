@@ -1,31 +1,31 @@
-'use client'
+"use client";
 
-import { HoverAtom } from './HoverAtom'
-import { ReactNode } from 'react'
+import { HoverAtom } from "./HoverAtom";
+import { ReactNode } from "react";
 
 interface MovingAtomProps {
   // Base props
-  width?: number
-  height?: number
-  className?: string
-  
+  width?: number;
+  height?: number;
+  className?: string;
+
   // Hover animation props
-  hoverAmplitude?: number
-  hoverDuration?: number
-  hoverEase?: string
-  initialDelay?: number
-  
+  hoverAmplitude?: number;
+  hoverDuration?: number;
+  hoverEase?: string;
+  initialDelay?: number;
+
   // Additional animation controls
-  rotationAngle?: number
-  rotationDuration?: number
-  scaleRange?: [number, number]
-  scaleDuration?: number
-  shouldRotate?: boolean
-  shouldScale?: boolean
-  shouldHover?: boolean
-  
+  rotationAngle?: number;
+  rotationDuration?: number;
+  scaleRange?: [number, number];
+  scaleDuration?: number;
+  shouldRotate?: boolean;
+  shouldScale?: boolean;
+  shouldHover?: boolean;
+
   // Children components (for future FollowAtom implementation)
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 export function MovingAtom({
@@ -33,13 +33,13 @@ export function MovingAtom({
   width = 300,
   height = 300,
   className = "",
-  
+
   // Default values for hover animation
   hoverAmplitude = 10,
   hoverDuration = 2,
   hoverEase = "easeInOut",
   initialDelay = 0,
-  
+
   // Default values for additional animations
   rotationAngle = 360,
   rotationDuration = 20,
@@ -48,9 +48,9 @@ export function MovingAtom({
   shouldRotate = false,
   shouldScale = false,
   shouldHover = true,
-  
+
   // Children
-  children
+  children,
 }: MovingAtomProps) {
   return (
     <div className={`absolute  ${className}`}>
@@ -71,5 +71,5 @@ export function MovingAtom({
       />
       {children}
     </div>
-  )
-} 
+  );
+}
