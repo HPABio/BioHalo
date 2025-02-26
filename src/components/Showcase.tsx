@@ -3,7 +3,7 @@
 import WomanWhiteRainJacket from "@/assets/images/BGImagesTest/WomanWhiteRainJacket.jpeg";
 
 import Image from "next/image";
-import React, { memo } from "react";
+import React from "react";
 import { WhatWeDoSection } from "@/components/sections2/BioHaloSections/WhatWeDoSection";
 import { FluorinatedMaterialsSection } from "@/components/sections2/BioHaloSections/FluorinatedMaterialsSection";
 import { StatsBox } from "@/components/ui/StatsBox";
@@ -24,16 +24,6 @@ import { FollowingCircle } from "@/components/ui/FollowingCircle";
 import { TransitionSectionOne } from "@/components/sections2/BioHaloSections/TransitionSectionOne";
 import { TransitionSectionTwo } from "@/components/sections2/BioHaloSections/TransitionSectionTwo";
 import { TransitionSectionThree } from "@/components/sections2/BioHaloSections/TransitionSectionThree";
-
-const MemoizedHeroSection5 = memo(HeroSection5);
-const MemoizedFluorinatedMaterialsSection = memo(FluorinatedMaterialsSection);
-const MemoizedFeatureOfPFAS = memo(FeatureOfPFAS);
-const MemoizedPollutionSection = memo(PollutionSection);
-const MemoizedPollutionSection2 = memo(PollutionSection2);
-const MemoizedHealthSectionImgRight = memo(HealthSectionImgRight);
-const MemoizedWhatWeDoSection = memo(WhatWeDoSection);
-const MemoizedPlatformFeaturesSection = memo(PlatformFeaturesSection);
-const MemoizedIconCarousel = memo(IconCarousel);
 
 export const Showcase = () => {
   // Copy all the content from page.tsx here
@@ -156,16 +146,16 @@ export const Showcase = () => {
         </div>
       </div>
 
-      <MemoizedHeroSection5 className="w-screen h-screen relative" />
+      <HeroSection5 className="w-screen h-screen relative" />
 
-      <MemoizedFluorinatedMaterialsSection
+      <FluorinatedMaterialsSection
         stats={stats}
         className="relative w-full h-full 
          overflow-hidden xl:overflow-visible z-10 xl:-mb-[100px]"
       />
 
       <section id="health" className="w-full h-full relative">
-        <MemoizedHealthSectionImgRight
+        <HealthSectionImgRight
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  
               pt-20 px-14 relative overflow-hidden xl:overflow-visible mb-36"
@@ -173,7 +163,7 @@ export const Showcase = () => {
       </section>
 
       <section id="pollution" className="min-h-screen">
-        <MemoizedPollutionSection2
+        <PollutionSection2
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  
                px-14 relative overflow-visible z-10"
@@ -181,11 +171,11 @@ export const Showcase = () => {
       </section>
 
       <section id="feature-pfas">
-        <MemoizedFeatureOfPFAS className="w-full min-h-[100vh]" />
+        <FeatureOfPFAS className="w-full min-h-[100vh]" />
       </section>
 
       <section id="what-we-do">
-        <MemoizedWhatWeDoSection
+        <WhatWeDoSection
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto text-white px-14 mt-12 relative"
         />
@@ -193,11 +183,11 @@ export const Showcase = () => {
 
       <section className="bg-red-500/0 w-full">
         <div className="w-full h-[700px] pt-10 overflow-hidden">
-          <MemoizedIconCarousel className="w-[1200px] h-[1200px] -mb-[500px] mx-auto" />
+          <IconCarousel className="w-[1200px] h-[1200px] -mb-[500px] mx-auto" />
         </div>
 
         <div id="platform-features">
-          <MemoizedPlatformFeaturesSection />
+          <PlatformFeaturesSection />
         </div>
       </section>
       <div className="w-full pt-10 bg-lightGrey">

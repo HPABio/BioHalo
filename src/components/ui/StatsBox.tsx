@@ -111,6 +111,7 @@ export function SimpleStatsBox({
     { clamp: true }
   );
 
+
   const rounded = useTransform(progress, (latest) => {
     const numericValue = parseInt(stat.number);
     return Math.round(isNaN(numericValue) ? 0 : numericValue * latest);

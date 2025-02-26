@@ -3,7 +3,7 @@
 import WomanWhiteRainJacket from "@/assets/images/BGImagesTest/WomanWhiteRainJacket.jpeg";
 
 import Image from "next/image";
-import React, { memo } from "react";
+import React from "react";
 import { WhatWeDoSection } from "@/components/sections2/BioHaloSections/WhatWeDoSection";
 import { FluorinatedMaterialsSection } from "@/components/sections2/BioHaloSections/FluorinatedMaterialsSection";
 import { StatsBox } from "@/components/ui/StatsBox";
@@ -25,16 +25,6 @@ import { TransitionSectionOne } from "@/components/sections2/BioHaloSections/Tra
 import { TransitionSectionTwo } from "@/components/sections2/BioHaloSections/TransitionSectionTwo";
 import { TransitionSectionThree } from "@/components/sections2/BioHaloSections/TransitionSectionThree";
 import { TransitionSectionFour } from "@/components/sections2/BioHaloSections/TransitionSectionFour";
-
-const MemoizedHeroSection5 = memo(HeroSection5);
-const MemoizedFluorinatedMaterialsSection = memo(FluorinatedMaterialsSection);
-const MemoizedFeatureOfPFAS = memo(FeatureOfPFAS);
-const MemoizedPollutionSection = memo(PollutionSection);
-const MemoizedPollutionSection2 = memo(PollutionSection2);
-const MemoizedHealthSectionImgRight = memo(HealthSectionImgRight);
-const MemoizedWhatWeDoSection = memo(WhatWeDoSection);
-const MemoizedPlatformFeaturesSection = memo(PlatformFeaturesSection);
-const MemoizedIconCarousel = memo(IconCarousel);
 
 export const Showcase2 = () => {
   // Copy all the content from page.tsx here
@@ -157,53 +147,55 @@ export const Showcase2 = () => {
         </div>
       </div>
 
-      <MemoizedHeroSection5 className="w-screen h-screen relative" />
+      <HeroSection5 className="w-screen h-screen relative" />
 
-      <MemoizedFluorinatedMaterialsSection
+      <FluorinatedMaterialsSection
         stats={stats}
         className="relative w-full h-full 
          overflow-hidden xl:overflow-visible z-10 xl:-mb-[100px]"
       />
 
       <section id="what-we-do">
-        <MemoizedWhatWeDoSection
+        <WhatWeDoSection
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto text-white px-14 mt-32 relative"
         />
       </section>
 
       <section id="feature-pfas" className="w-full h-full relative pt-32">
-        <TransitionSectionFour className="w-full h-[200px]" circleSize="700vw"/>
-        <MemoizedFeatureOfPFAS className="w-full min-h-[70vh] bg-black" />
-        <TransitionSectionFour className="w-full h-[200px] rotate-180" circleSize="700vw"/>
+        <TransitionSectionFour
+          className="w-full h-[200px]"
+          circleSize="700vw"
+        />
+        <FeatureOfPFAS className="w-full min-h-[70vh] bg-black" />
+        <TransitionSectionFour
+          className="w-full h-[200px] rotate-180"
+          circleSize="700vw"
+        />
       </section>
 
       <section id="health" className="w-full h-full relative pt-32">
-        <MemoizedHealthSectionImgRight
+        <HealthSectionImgRight
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  px-14 relative overflow-hidden xl:overflow-visible mb-36"
         />
       </section>
 
       <section id="pollution" className="min-h-screen">
-        <MemoizedPollutionSection2
+        <PollutionSection2
           stats={stats}
           className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  
                px-14 relative overflow-visible z-10"
         />
       </section>
 
-   
-
-     
-
       <section className="bg-red-500/0 w-full">
         <div className="w-full h-[700px] pt-10 overflow-hidden">
-          <MemoizedIconCarousel className="w-[1200px] h-[1200px] -mb-[500px] mx-auto" />
+          <IconCarousel className="w-[1200px] h-[1200px] -mb-[500px] mx-auto" />
         </div>
 
         <div id="platform-features">
-          <MemoizedPlatformFeaturesSection />
+          <PlatformFeaturesSection />
         </div>
       </section>
       <div className="w-full pt-10 bg-lightGrey">
@@ -300,7 +292,38 @@ export const Showcase2 = () => {
           <p className="mb-2">Let's grow a new world together.</p>
           <p className="text-sm">© 2025 Ferment. All rights reserved.</p>
         </div>
+
+
+         <div className="w-[1000px] h-[1000px] grid items-center">
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-[500px] h-[500px] bg-blue-500"></div>
+                </div>
+                <div className="w-full h-full grid grid-cols-3">
+                    <div className="w-[100px] h-[100px] rounded-full bg-red-500 mr-auto mb-auto"></div>
+                    <div className="w-[100px] h-[100px] rounded-full bg-red-500 ml-auto mb-auto"></div>
+                    <div className="w-[100px] h-[100px] rounded-full bg-red-500 mr-auto mt-auto"></div>
+                    <div className="w-[100px] h-[100px] rounded-full bg-red-500 ml-auto mt-auto"></div>
+                </div>
+         </div>
+
+
+
+
+
+
+
+
       </footer>
     </main>
   );
 };
+
+
+
+
+
+
+
+
+
+

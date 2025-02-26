@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 // Dynamically import p5 with no SSR to avoid window undefined errors
@@ -9,6 +9,7 @@ const Sketch = dynamic(() => import("react-p5").then((mod) => mod.default), {
 interface SerenityShaderProps {
   className?: string;
   colors?: string[];
+  debug?: boolean;
 }
 
 const vertexShader = `
@@ -274,9 +275,14 @@ const defaultColors = ["#225ee1", "#28d7bf", "#ac53cf", "#e7a39c"];
 const SerenityShader: React.FC<SerenityShaderProps> = ({
   className = "",
   colors = defaultColors,
+  debug = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  let shader: any;
+  const drawCountRef = useRef<number>(0);
+  const [isInView, setIsInView] = useState<boolean>(true); // Default to true until observer is set up
+  const p5InstanceRef = useRef<any>(null);
+  const shaderRef = useRef<any>(null);
+  const lastTimeRef = useRef<number>(0);
 
   const hex2rgb = (hex: string) => {
     const r = parseInt(hex.slice(1, 3), 16);
@@ -293,6 +299,14 @@ const SerenityShader: React.FC<SerenityShaderProps> = ({
   };
 
   const setup = (p5: any, canvasParentRef: Element) => {
+    if (debug) {
+      console.log(
+        "SerenityShader setup function executed",
+        new Date().toISOString()
+      );
+    }
+
+    p5InstanceRef.current = p5;
     const { width, height } = getContainerDimensions();
     const canvas = p5.createCanvas(width, height, p5.WEBGL);
     canvas.parent(canvasParentRef);
@@ -302,20 +316,38 @@ const SerenityShader: React.FC<SerenityShaderProps> = ({
     canvas.style("left", "0");
     canvas.style("top", "0");
     p5.noStroke();
-    shader = p5.createShader(vertexShader, fragmentShader);
+    shaderRef.current = p5.createShader(vertexShader, fragmentShader);
+    lastTimeRef.current = p5.millis();
   };
 
+
+
   const draw = (p5: any) => {
-    p5.shader(shader);
+    // Only perform draw operations if the component is in view
+    if (!isInView) {
+      // Update the last time to prevent time jumps when coming back into view
+      lastTimeRef.current = p5.millis();
+      return;
+    }
 
-    shader.setUniform("uResolution", [p5.width, p5.height]);
-    shader.setUniform("uTime", p5.millis() / 100);
-    shader.setUniform("uSpeedColor", 20.0);
+    drawCountRef.current += 1;
+    if (debug) {
+      console.log(
+        `SerenityShader draw function executed #${drawCountRef.current}`,
+        new Date().toISOString()
+      );
+    }
 
-    shader.setUniform("uColor1", hex2rgb(colors[0]));
-    shader.setUniform("uColor2", hex2rgb(colors[1]));
-    shader.setUniform("uColor3", hex2rgb(colors[2]));
-    shader.setUniform("uColor4", hex2rgb(colors[3]));
+    p5.shader(shaderRef.current);
+
+    shaderRef.current.setUniform("uResolution", [p5.width, p5.height]);
+    shaderRef.current.setUniform("uTime", p5.millis() / 100);
+    shaderRef.current.setUniform("uSpeedColor", 20.0);
+
+    shaderRef.current.setUniform("uColor1", hex2rgb(colors[0]));
+    shaderRef.current.setUniform("uColor2", hex2rgb(colors[1]));
+    shaderRef.current.setUniform("uColor3", hex2rgb(colors[2]));
+    shaderRef.current.setUniform("uColor4", hex2rgb(colors[3]));
 
     // Draw a rectangle that covers the entire canvas
     p5.translate(-p5.width / 2, -p5.height / 2); // Move to top-left corner
@@ -323,9 +355,74 @@ const SerenityShader: React.FC<SerenityShaderProps> = ({
   };
 
   const windowResized = (p5: any) => {
+    if (debug) {
+      console.log(
+        "SerenityShader windowResized function executed",
+        new Date().toISOString()
+      );
+    }
+
     const { width, height } = getContainerDimensions();
     p5.resizeCanvas(width, height);
   };
+
+  useEffect(() => {
+    if (debug) {
+      console.log("SerenityShader component mounted", new Date().toISOString());
+    }
+
+    // Set up IntersectionObserver to detect when component is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        const wasInView = isInView;
+        const nowInView = entry.isIntersecting;
+
+        setIsInView(nowInView);
+
+        if (debug) {
+          console.log(
+            `SerenityShader visibility changed: ${
+              nowInView ? "visible" : "hidden"
+            }`,
+            new Date().toISOString()
+          );
+        }
+
+        // If coming back into view, force a redraw
+        if (!wasInView && nowInView && p5InstanceRef.current) {
+          if (debug) {
+            console.log("Forcing redraw after coming back into view");
+          }
+          // Reset the shader to ensure it renders properly
+          if (p5InstanceRef.current) {
+            shaderRef.current = p5InstanceRef.current.createShader(
+              vertexShader,
+              fragmentShader
+            );
+          }
+        }
+      },
+      {
+        rootMargin: "100px", // Start calculations slightly before it comes into view
+        threshold: 0.01, // Trigger when even a small part is visible
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (debug) {
+        console.log(
+          `SerenityShader component unmounted after ${drawCountRef.current} draws`,
+          new Date().toISOString()
+        );
+      }
+      observer.disconnect();
+    };
+  }, [debug, isInView]);
 
   return (
     <div

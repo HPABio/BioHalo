@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import "tailwindcss/tailwind.css";
 import WomanWhiteRainJacket from "@/assets/images/BGImagesTest/WomanWhiteRainJacket.jpeg";
 import Image from "next/image";
-import { useEffect, useRef, ReactNode } from "react";
+import { useRef, ReactNode } from "react";
 
 interface WaterColorRevealProps {
   children: ReactNode;
@@ -54,7 +54,11 @@ const WaterColorReveal = ({
   const rectWidth = useTransform(scrollYProgress, [0, 1], [0, widthInPx]);
 
   return (
-    <div ref={elementRef} className={`relative ${className}`}>
+    <motion.div
+      ref={elementRef}
+      className={`relative ${className}`}
+      style={{ willChange: "transform" }}
+    >
       <svg width={widthInPx} height={heightInPx} className="absolute inset-0">
         <defs>
           <filter id="sandy">
@@ -103,7 +107,7 @@ const WaterColorReveal = ({
       </svg>
       {/* Original content rendered underneath to maintain layout */}
       <div className="invisible">{children}</div>
-    </div>
+    </motion.div>
   );
 };
 
