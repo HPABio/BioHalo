@@ -24,6 +24,7 @@ import { FollowingCircle } from "@/components/ui/FollowingCircle";
 import { TransitionSectionOne } from "@/components/sections2/BioHaloSections/TransitionSectionOne";
 import { TransitionSectionTwo } from "@/components/sections2/BioHaloSections/TransitionSectionTwo";
 import { TransitionSectionThree } from "@/components/sections2/BioHaloSections/TransitionSectionThree";
+import { TransitionSectionFour } from "@/components/sections2/BioHaloSections/TransitionSectionFour";
 
 const MemoizedHeroSection5 = memo(HeroSection5);
 const MemoizedFluorinatedMaterialsSection = memo(FluorinatedMaterialsSection);
@@ -35,7 +36,7 @@ const MemoizedWhatWeDoSection = memo(WhatWeDoSection);
 const MemoizedPlatformFeaturesSection = memo(PlatformFeaturesSection);
 const MemoizedIconCarousel = memo(IconCarousel);
 
-export const Showcase = () => {
+export const Showcase2 = () => {
   // Copy all the content from page.tsx here
   const stats = [
     {
@@ -164,11 +165,23 @@ export const Showcase = () => {
          overflow-hidden xl:overflow-visible z-10 xl:-mb-[100px]"
       />
 
-      <section id="health" className="w-full h-full relative">
+      <section id="what-we-do">
+        <MemoizedWhatWeDoSection
+          stats={stats}
+          className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto text-white px-14 mt-12 relative"
+        />
+      </section>
+
+      <section id="feature-pfas" className="w-full h-full relative pt-32">
+        <TransitionSectionFour className="w-full h-[200px]" circleSize="700vw"/>
+        <MemoizedFeatureOfPFAS className="w-full min-h-[70vh] bg-black" />
+        <TransitionSectionFour className="w-full h-[200px] rotate-180" circleSize="700vw"/>
+      </section>
+
+      <section id="health" className="w-full h-full relative pt-32">
         <MemoizedHealthSectionImgRight
           stats={stats}
-          className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  
-              pt-20 px-14 relative overflow-hidden xl:overflow-visible mb-36"
+          className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto  px-14 relative overflow-hidden xl:overflow-visible mb-36"
         />
       </section>
 
@@ -180,16 +193,9 @@ export const Showcase = () => {
         />
       </section>
 
-      <section id="feature-pfas">
-        <MemoizedFeatureOfPFAS className="w-full min-h-[100vh]" />
-      </section>
+   
 
-      <section id="what-we-do">
-        <MemoizedWhatWeDoSection
-          stats={stats}
-          className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto text-white px-14 mt-12 relative"
-        />
-      </section>
+     
 
       <section className="bg-red-500/0 w-full">
         <div className="w-full h-[700px] pt-10 overflow-hidden">

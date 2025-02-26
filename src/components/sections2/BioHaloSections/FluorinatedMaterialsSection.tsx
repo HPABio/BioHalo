@@ -85,7 +85,7 @@ export function FluorinatedMaterialsSection({
                           <p className="text-lg max-w-md pt-4 leading-relaxed text-gray-500">
                             Due to their unique properties, like heat resistance,
                             water repellency, and chemical stability, they are highly
-                            sought after and used in a wide range of products.
+                            sought after and used in a wide range of products. From industrial applications to consumer products, PFAS are everywhere.
                           </p>
                         </div>
                       </div>
