@@ -52,11 +52,11 @@ export function WhatWeDoSection({
         className="absolute bg-red-500/0 top-[13.2%] left-[1.2%]"
       />
 
-      <div className="hidden lg:block absolute top-0 right-0 w-full bg-red-500/0">
+      <div className="hidden xl:block absolute top-0 right-0 w-full bg-red-500/0">
         <Image
           src={BioHaloLogoOnly}
           alt="beaker"
-          className="absolute w-[40%] right-0 -translate-x-[20%] -translate-y-[60%]"
+          className="absolute w-[43%] right-0 -translate-x-[12%] 2xl:translate-x-[2vw] xl:-translate-y-[20%]"
         />
       </div>
 
@@ -71,7 +71,7 @@ export function WhatWeDoSection({
             <Image
               src={BioHaloLogoOnly}
               alt="BioHalo Logo"
-              className="h-[1em] w-auto ml-4 lg:hidden"
+              className="h-[1em] w-auto ml-4 xl:hidden"
             />
           </span>
           <br />

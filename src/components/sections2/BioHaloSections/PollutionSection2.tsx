@@ -42,26 +42,26 @@ export function PollutionSection2({
   const statsCircles = [
     {
       stat: stats[2],
-      // Top-left position: 50% - bigCircleRadius - smallCircleRadius
-      position: "left-[calc(50%-83%)] top-[calc(50%-83%)]",
+      // Moved to bottom-right position (was top-left)
+      position: "left-[calc(50%+67%)] top-[calc(50%+67%)] hidden lg:block lg:absolute  lg:flex",
       size: `h-[${sizes[0]}] w-[${sizes[0]}]`,
     },
     {
       stat: stats[7],
-      // Bottom-right position: 50% + bigCircleRadius + smallCircleRadius
-      position: "left-[calc(50%+67%)] top-[calc(50%+67%)]",
+      // Moved to top-left position (was bottom-right)
+      position: "left-[calc(50%-83%)] top-[calc(50%-83%)] hidden lg:block lg:absolute  lg:flex",
       size: `h-[${sizes[1]}] w-[${sizes[1]}]`,
     },
     {
       stat: stats[6],
       // Top-right position
-      position: "left-[calc(50%+73%)] top-[calc(50%-73%)]",
+      position: "left-[calc(50%+73%)] top-[calc(50%-73%)] hidden",
       size: `h-[${sizes[2]}] w-[${sizes[2]}]`,
     },
     {
       stat: stats[3],
       // Bottom-left position
-      position: "left-[calc(50%-70%)] top-[calc(50%+70%)]",
+      position: "left-[calc(50%-70%)] top-[calc(50%+70%)] hidden lg:block lg:absolute  lg:flex",
       size: `h-[${sizes[3]}] w-[${sizes[3]}]`,
     },
   ];
@@ -110,18 +110,17 @@ export function PollutionSection2({
         {/* Left Column with Image */}
         <div className="w-full h-full relative">
           <motion.div
-            className="absolute 2xl:w-[600px] 2xl:h-[600px] 2xl:top-[35%] 2xl:left-[65%] 
-            w-[300px] h-[300px] top-[35%] left-[65%] 
+            className="absolute w-[600px] h-[600px] top-[35%] left-[65%] 
             -translate-y-[50%] -translate-x-[50%]"
           >
             {/* Stats Circles */}
             {statsCircles.map((circle, index) => (
               <motion.div
                 key={index}
-                className={`hidden lg:block lg:absolute ${circle.size} rounded-full
+                className={`${circle.size} rounded-full
                 ${circle.position}
 
-                overflow-hidden lg:flex items-center justify-center bg-red-500/0`}
+                overflow-hidden items-center justify-center bg-red-500/0`}
                 style={{
                   backgroundImage: `url(${
                     index % 2 === 0 ? WaterRepellantFabric.src : MeshFabric.src

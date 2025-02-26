@@ -12,6 +12,14 @@ import {
   Sprout,
   Settings,
   Gauge,
+  Droplet,
+  BarChart3,
+  Wind,
+  Atom,
+  Sliders,
+  /*   Seedling,
+  Flask, */
+  Repeat,
 } from "lucide-react";
 
 interface FeatureCardProps {
@@ -60,6 +68,54 @@ const features = [
     title: "Energy Efficient",
     description:
       "Our biological processes require significantly less energy than traditional chemical synthesis.",
+  },
+  {
+    icon: <Repeat className="w-6 h-6 text-tealAccent" />,
+    title: "Renewable & Waste Feedstock",
+    description:
+      "Our technology utilizes renewable resources and waste materials as feedstock, promoting circular economy principles.",
+  },
+  {
+    icon: <BarChart3 className="w-6 h-6 text-tealAccent" />,
+    title: "60% Reduced GHG Emissions",
+    description:
+      "Our biofluorination process significantly reduces greenhouse gas emissions compared to traditional methods.",
+  },
+  {
+    icon: <Wind className="w-6 h-6 text-tealAccent" />,
+    title: "Low Pollutant Generation",
+    description:
+      "Our processes generate minimal environmental pollutants, protecting ecosystems and human health.",
+  },
+  {
+    icon: <Atom className="w-6 h-6 text-tealAccent" />,
+    title: "Minimal By-Products",
+    description:
+      "Our precision technology produces fewer unwanted by-products, increasing efficiency and reducing waste.",
+  },
+  {
+    icon: <Atom className="w-6 h-6 text-tealAccent" />,
+    title: "Controlled Mono Fluorination",
+    description:
+      "Our patented process enables precise control over fluorination, targeting specific molecular positions.",
+  },
+  {
+    icon: <Atom className="w-6 h-6 text-tealAccent" />,
+    title: "Bio-Based Materials",
+    description:
+      "We utilize biological systems and renewable resources to create sustainable fluorinated polymers.",
+  },
+  {
+    icon: <Droplet className="w-6 h-6 text-tealAccent" />,
+    title: "Reduced Fluorine Usage",
+    description:
+      "Our technology requires significantly less fluorine while maintaining or enhancing material performance.",
+  },
+  {
+    icon: <Sliders className="w-6 h-6 text-tealAccent" />,
+    title: "Fine-Tuning Capabilities",
+    description:
+      "Our platform allows precise adjustment of properties to meet specific performance requirements.",
   },
   {
     icon: <Thermometer className="w-6 h-6 text-tealAccent" />,

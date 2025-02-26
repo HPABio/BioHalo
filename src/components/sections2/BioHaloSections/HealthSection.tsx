@@ -334,9 +334,8 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
             <div className="absolute top-[63%] -translate-y-[50%] w-full">
               <SimpleStatsBox
                 classNamesContainer="w-fit mx-auto z-20"
-                classNamesTitle="text-center text-6xl lg:text-9xl
-                  font-bold mb-4 bg-gradient-to-tl from-tealAccent to-lightGrey 
-                  bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)]"
+                classNamesTitle="text-center text-6xl lg:text-9xl font-black mb-4 
+                bg-gradient-to-tl from-mintAccent via-tealAccent to-teal-900 bg-clip-text text-transparent"
                 classNamesSubTitle="text-center text-lightGrey/80 text-lg lg:text-4xl
                   font-bold capitalize -mt-8"
                 stat={stats[3]}
