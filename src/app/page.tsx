@@ -8,6 +8,7 @@ import { BentoSection } from "@/components/sections2/BentoSection";
 import { HeroSection4 } from "@/components/HeroSections/HeroSection4";
 import { ShowcaseNavbar } from "@/components/ShowcaseNavbar";
 import { Showcase } from "@/components/Showcase";
+import { Showcase2 } from "@/components/Showcase2";
 
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-800 text-white">
       <div className="relative bg-gradient-to-br from-slate-50 to-slate-800 w-full h-full">
         {/* <HeroSection4 /> */}
-        <Showcase />
+        {/* <Showcase /> */}
+        <Showcase2 />
         {/* <StatsSection6 className="z-10  overflow-visible" />
         <StatsSection5 className="z-3" />
         
