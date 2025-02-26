@@ -121,9 +121,9 @@ export function FluorinatedMaterialsSection({
                           </div>
                         </div>
 
-                        <div className="hidden xl:block w-[700px] h-[700px] absolute bottom-[-10%] right-[120%] ml-auto 
-                        translate-y-[20%] translate-x-[5%] 
-                        bg-black/70 opacity-1 rounded-full blur-[25px]"/>
+                        <div className="hidden xl:block w-[700px] h-[700px] absolute 
+                        bottom-[-10%] right-[120%] ml-auto translate-y-[20%] translate-x-[5%] 
+                        opacity-70 bg-black/70 rounded-full blur-[25px]"/>
                         
                         
                           {/* Circle 4 V2 */}

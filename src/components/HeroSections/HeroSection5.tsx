@@ -28,7 +28,7 @@ export function HeroSection5({ className }: { className?: string }) {
             backgroundRepeat: "no-repeat",
           }} />
       {/* Shader Container */}
-      <div className="hidden absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

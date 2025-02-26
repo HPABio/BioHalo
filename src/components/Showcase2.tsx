@@ -168,7 +168,7 @@ export const Showcase2 = () => {
       <section id="what-we-do">
         <MemoizedWhatWeDoSection
           stats={stats}
-          className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto text-white px-14 mt-12 relative"
+          className="bg-red-500/0 min-h-[50vh] max-w-[1280px] mx-auto text-white px-14 mt-32 relative"
         />
       </section>
 
