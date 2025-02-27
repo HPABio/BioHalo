@@ -9,6 +9,8 @@ import { HeroSection4 } from "@/components/HeroSections/HeroSection4";
 import { ShowcaseNavbar } from "@/components/ShowcaseNavbar";
 import { Showcase } from "@/components/Showcase";
 import { Showcase2 } from "@/components/Showcase2";
+import { Showcase3 } from "@/components/Showcase3";
+import { Showcase4 } from "@/components/Showcase4"; 
 
 
 export default function Home() {
@@ -17,7 +19,7 @@ export default function Home() {
       <div className="relative bg-gradient-to-br from-slate-50 to-slate-800 w-full h-full">
         {/* <HeroSection4 /> */}
         {/* <Showcase /> */}
-        <Showcase2 />
+        <Showcase4 />
         {/* <StatsSection6 className="z-10  overflow-visible" />
         <StatsSection5 className="z-3" />
         

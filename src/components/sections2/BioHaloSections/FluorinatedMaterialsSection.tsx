@@ -157,7 +157,7 @@ export function FluorinatedMaterialsSection({
   const ref2 = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref2,
-    offset: ["center end", "start start"],
+    offset: ["center end", "center start"],
   });
 
   const shouldRasterize = false;
@@ -180,7 +180,7 @@ export function FluorinatedMaterialsSection({
         </div>
 
         <div className="absolute w-full h-full top-0 left-0 overflow-hidden xl:overflow-visible xl:bg-transparent bg-black  ">
-          <div className="w-full h-full max-w-[1280px] mx-auto px-14  pt-[350px] -mb-[0px]">
+          <div className="w-full h-full max-w-[1280px] mx-auto px-14  pt-[50px] -mb-[0px]">
             {/* TEXT COLUMN */}
             <div className="w-full bg-red-500/0">
               <h1 className="max-w-[720px] font-black font-arial text-4xl md:text-6xl bg-gradient-to-br from-mintAccent to-tealAccent bg-clip-text text-transparent pb-10">
@@ -271,7 +271,7 @@ export function FluorinatedMaterialsSection({
                         classNamesSubTitle="text-center text-lightGrey/60 text-3xl font-bold mt-20 capitalize"
                         stat={stats[4]}
                         scrollYProgress={scrollYProgress}
-                        scrollEndThreshold={0.8}
+                        scrollEndThreshold={0.7}
                         index={4}
                         ratchet={false}
                       />
@@ -284,7 +284,7 @@ export function FluorinatedMaterialsSection({
                         classNamesSubTitle="text-center text-lightGrey/60 text-3xl font-bold mt-20 capitalize"
                         stat={stats[4]}
                         scrollYProgress={scrollYProgress}
-                        scrollEndThreshold={0.8}
+                        scrollEndThreshold={0.7}
                         index={4}
                         ratchet={false}
                       />

@@ -232,6 +232,9 @@ export const Showcase3 = () => {
         className="w-screen h-screen relative"
         debug={DEBUG_MODE.enabled && DEBUG_MODE.components.hero}
       />
+      <section className="py-16 bg-black text-center px-4" id="transition-section-one">
+        <div className="w-full h-[300px]"></div>
+      </section>
 
       <FluorinatedMaterialsSection
         stats={stats}
@@ -239,7 +242,7 @@ export const Showcase3 = () => {
         debug={DEBUG_MODE.enabled && DEBUG_MODE.components.fluorinatedMaterials}
       />
 
-      <Suspense fallback={<LoadingSpinner />}>
+
         <section id="what-we-do">
           <WhatWeDoSection
             stats={stats}
@@ -320,7 +323,7 @@ export const Showcase3 = () => {
           </div>
           <BentoSection2 className="bg-lightGrey relative" />
         </section>
-      </Suspense>
+
 
       {/* Team Section */}
       <section id="team-section" className="py-16 bg-gray-100 text-center px-4">
