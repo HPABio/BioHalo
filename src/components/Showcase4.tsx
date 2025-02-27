@@ -6,7 +6,7 @@ import React, { Suspense, memo } from "react";
 import dynamic from "next/dynamic";
 import { HeroSection5 } from "@/components/HeroSections/HeroSection5";
 import { FluorinatedMaterialsSection } from "@/components/sections2/BioHaloSections/FluorinatedMaterialsSection";
-import { PollutionSection } from "@/components/sections2/BioHaloSections/PollutionSection";
+import { PollutionSection, PollutionSectionBACKUP } from "@/components/sections2/BioHaloSections/PollutionSection";
 import { FollowingCircle } from "@/components/ui/FollowingCircle";
 import { TransitionSectionOne } from "@/components/sections2/BioHaloSections/TransitionSectionOne";
 import { TransitionSectionTwo } from "@/components/sections2/BioHaloSections/TransitionSectionTwo";
@@ -204,9 +204,10 @@ export const Showcase4 = () => {
         </section>
       </Suspense>
 
+      {/* Pollution Section */}
       <Suspense fallback={<LoadingSpinner />}>
         <section id="pollution" className="min-h-screen">
-          <PollutionSection2 className="min-h-[50vh] max-w-[1280px] mx-auto px-14 relative overflow-visible z-10" 
+          <PollutionSection className="min-h-[50vh] max-w-[1280px] mx-auto px-14 relative overflow-visible z-10" 
           stats={stats}/>
         </section>
       </Suspense>
@@ -228,12 +229,28 @@ export const Showcase4 = () => {
         </section>
       </Suspense>
 
+      {/* Team Section */}
       <section id="team-section" className="py-16 bg-gray-100 text-center px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet Our Team</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Team Member Card */}
           <div className="bg-white p-6 shadow rounded">
-            <Image src={WomanWhiteRainJacket} alt="Jason Kakoyiannis" className="w-32 h-32 rounded-full mx-auto mb-4" />
+            <Image
+              src={WomanWhiteRainJacket}
+              alt="Jason Kakoyiannis"
+              className="w-32 h-32 rounded-full mx-auto mb-4"
+            />
             <h3 className="text-xl font-semibold">Jason Kakoyiannis</h3>
+            <p className="text-gray-600">Managing Partner</p>
+          </div>
+          <div className="bg-white p-6 shadow rounded">
+            <Image
+              src={WomanWhiteRainJacket}
+              alt="Brian Brazeau"
+              className="w-32 h-32 rounded-full mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold">Brian Brazeau</h3>
+            <p className="text-gray-600">Partner</p>
           </div>
         </div>
       </section>
