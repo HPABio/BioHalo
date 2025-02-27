@@ -89,10 +89,7 @@ export function SimpleStatsBox({
   classNamesContainer = "backdrop-blur-sm bg-black/20 p-8 rounded-lg text-center shadow-xl",
   classNamesTitle = "text-5xl md:text-7xl font-bold text-tealAccent mb-2",
   classNamesSubTitle = "text-mintAccent text-lg font-bold -mt-4",
-  index = 0,
-  ratchet = false,
 }: StatsBoxProps) {
-  const componentRef = useRef(null);
 
   // Memoize the stat values to prevent unnecessary recalculations
   const memoizedStatNumber = useMemo(() => stat.number, [stat.number]);
@@ -115,11 +112,6 @@ export function SimpleStatsBox({
 
   return (
     <motion.div
-      ref={componentRef}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
       className={classNamesContainer}
     >
       <h3 className={classNamesTitle}>

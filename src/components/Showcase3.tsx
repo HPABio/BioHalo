@@ -380,26 +380,6 @@ export const Showcase3 = () => {
           </form>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <p className="mb-2">Let's grow a new world together.</p>
-          <p className="text-sm">© 2025 Ferment. All rights reserved.</p>
-        </div>
-
-        <div className="w-[1000px] h-[1000px] grid items-center">
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="w-[500px] h-[500px] bg-blue-500"></div>
-          </div>
-          <div className="w-full h-full grid grid-cols-3">
-            <div className="w-[100px] h-[100px] rounded-full bg-red-500 mr-auto mb-auto"></div>
-            <div className="w-[100px] h-[100px] rounded-full bg-red-500 ml-auto mb-auto"></div>
-            <div className="w-[100px] h-[100px] rounded-full bg-red-500 mr-auto mt-auto"></div>
-            <div className="w-[100px] h-[100px] rounded-full bg-red-500 ml-auto mt-auto"></div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 };

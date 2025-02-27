@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useScroll, motion } from "framer-motion";
 import Image from "next/image";
-import { StatsBox, StaticStatsBox } from "@/components/ui/StatsBox";
+import { StatsBox, StaticStatsBox, SimpleStatsBox } from "@/components/ui/StatsBox";
 import { MovingAtom } from "../../ui/MovingAtom";
 import WaterColorReveal from "@/components/WaterColorReveal";
 import MeshFabric from "@/assets/images/Mesh-fabric.png";
@@ -26,7 +26,11 @@ export const WhatWeDoSection = ({
 }: WhatWeDoSectionProps) => {
   if (debug) console.log("Rendering WhatWeDoSection");
 
-  const ref = useRef(null);
+  const refWWD = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: refWWD,
+    offset: ["center end", "start start"],
+  });
 
   return (
     <section className={`${className} overflow-visible`}>
@@ -143,25 +147,20 @@ export const WhatWeDoSection = ({
             />
           </div>
           <motion.div
-            ref={ref}
+            ref={refWWD}
             className="absolute h-full w-full rounded-full left-0 top-0 overflow-hidden flex items-center justify-center bg-gradient-to-tr from-black via-black/20 to-tealAccent/0"
           >
-            <StaticStatsBox
+            <SimpleStatsBox
               classNamesContainer="w-fit z-10 h-fit"
               classNamesTitle="lg-9xl w-[800px] mt-5 scale-[1.2] text-center md:text-9xl
               font-bold mb-6 bg-gradient-to-tl from-tealAccent to-lightGrey bg-clip-text text-transparent [-webkit-text-stroke:2px_rgb(229,231,235,0.1)] [text-stroke:2px_rgb(229,231,235,0.1)]"
               classNamesSubTitle="text-center text-lightGrey/60 text-2xl font-bold -mt-5 capitalize"
               stat={stats[0]}
-              /* scrollYProgress={
-                useScroll({
-                  target: ref,
-                  offset: ["start end", "end start"],
-                }).scrollYProgress
-              }
+              scrollYProgress={scrollYProgress}
               scrollEndThreshold={0.5}
               index={0}
               text=""
-              ratchet={true} */
+              ratchet={true}
             />
           </motion.div>
         </div>

@@ -51,7 +51,6 @@ const Circle1 = React.memo(function Circle1() {
           className="w-full h-full opacity-40 mix-blend-screen"
           style={{
             transform: "translate3d(-3%, 2%, 0) scale(1.1)",
-            willChange: "transform",
           }}
         />
       </div>
@@ -118,7 +117,6 @@ const Circle3Base = React.memo(function Circle3Base() {
       <div className="absolute w-full h-full bg-gradient-to-tr from-tealAccent via-tealAccent to-mintAccent mix-blend-overlay opacity-70"></div>
       <div className="absolute w-full h-full bg-gradient-to-t from-black via-tealAccent to-mintAccent/0 mix-blend-multiply opacity-1"></div>
     </div>
-
   );
 });
 
@@ -168,7 +166,7 @@ export function FluorinatedMaterialsSection({
 
   return (
     <section className={`${className} relative`}>
-      <div className="absolute top-0 right-0 w-full h-[100px] bg-gradient-to-t from-black/0 via-black/70 to-black"></div>
+      
 
       <div className="hidden bottom-0 right-0 w-full h-full bg-gradient-to-t from-black via-black/70 to-tealAccent/0"></div>
 
@@ -182,7 +180,7 @@ export function FluorinatedMaterialsSection({
         </div>
 
         <div className="absolute w-full h-full top-0 left-0 overflow-hidden xl:overflow-visible xl:bg-transparent bg-black  ">
-          <div className="w-full h-full max-w-[1280px] mx-auto px-14  pt-[100px] -mb-[0px]">
+          <div className="w-full h-full max-w-[1280px] mx-auto px-14  pt-[350px] -mb-[0px]">
             {/* TEXT COLUMN */}
             <div className="w-full bg-red-500/0">
               <h1 className="max-w-[720px] font-black font-arial text-4xl md:text-6xl bg-gradient-to-br from-mintAccent to-tealAccent bg-clip-text text-transparent pb-10">
@@ -258,14 +256,13 @@ export function FluorinatedMaterialsSection({
                   className="w-[900px] h-[900px] absolute bottom-[20%] right-[45%] ml-auto translate-y-[15%] translate-x-[5%] bg-green-500/0"
                   style={{ willChange: "transform" }}
                 >
-                  <motion.div className="relative w-[900px] h-[900px]"
-                  ref={ref2}>
-                    
+                  <motion.div
+                    className="relative w-[900px] h-[900px]"
+                    ref={ref2}
+                  >
                     <Circle3Base />
-                    
-                    <div
-                      className="absolute inset-0 flex flex-col items-center justify-center"
-                    >
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
                       {/* Blurred Title */}
                       <SimpleStatsBox
                         classNamesContainer="w-fit h-fit mt-14"
@@ -292,10 +289,8 @@ export function FluorinatedMaterialsSection({
                         ratchet={false}
                       />
                     </div>
-                    
                   </motion.div>
                 </div>
-
 
                 {/* Circle 4 */}
                 <div
@@ -345,7 +340,7 @@ export function FluorinatedMaterialsSection({
           />
         </div>
       </div>
-
+      <div className="absolute top-0 right-0 w-full h-[100px] bg-gradient-to-t from-black/0 via-black/70 to-black"></div>
       {/* <div className="w-full h-[100px] absolute bottom-0 left-0 bg-gradient-to-t from-black/0 via-black/70 to-black/100"/> */}
     </section>
   );
