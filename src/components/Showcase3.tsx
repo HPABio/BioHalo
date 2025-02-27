@@ -63,7 +63,7 @@ const LoadingSpinner = () => (
 
 // Debug configuration
 const DEBUG_MODE = {
-  enabled: true,
+  enabled: false,
   components: {
     showcase: true,
     hero: true,
