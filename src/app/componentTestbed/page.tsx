@@ -34,7 +34,7 @@ export default function Page() {
         
           <div className="absolute inset-0 w-screen h-screen bg-purple-500">
           </div>
-            <FauxBokehAnimation />
+            {/* <FauxBokehAnimation /> */}
       
       <div>
         

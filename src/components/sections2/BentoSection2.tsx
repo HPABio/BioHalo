@@ -10,7 +10,11 @@ import { BentoSafety } from "../bentos/Gen_2_Bentos/BentoSafety";
 import { BentoEnvironment } from "../bentos/Gen_2_Bentos/BentoEnvironment";
 import { BentoContact } from "../bentos/Gen_2_Bentos/BentoContact";
 
-export function BentoSection2({ className }: { className?: string }) {
+export const BentoSection2 = ({ className }: { className?: string }) => {
+  const DEBUG = false; // Toggle this to enable/disable logging
+
+  if (DEBUG) console.log("Rendering BentoSection2");
+
   return (
     <section className={`py-16 bg-gray-50 ${className || ""}`}>
       <div className="container mx-auto px-4">
@@ -33,4 +37,4 @@ export function BentoSection2({ className }: { className?: string }) {
       </div>
     </section>
   );
-}
+};

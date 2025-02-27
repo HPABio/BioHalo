@@ -100,7 +100,17 @@ const FeatureCardV3 = ({
   </motion.div>
 );
 
-export function FeatureOfPFAS({ className }: { className: string }) {
+interface FeatureOfPFASProps {
+  className?: string;
+  debug?: boolean;
+}
+
+export const FeatureOfPFAS = ({
+  className,
+  debug = false,
+}: FeatureOfPFASProps) => {
+  if (debug) console.log("Rendering FeatureOfPFAS");
+
   const ref = useRef(null);
   const [version, setVersion] = useState(1);
 
@@ -162,4 +172,4 @@ export function FeatureOfPFAS({ className }: { className: string }) {
       </div>
     </section>
   );
-}
+};

@@ -155,11 +155,17 @@ const features = [
   },
 ];
 
-export function PlatformFeaturesSection({
-  className = "",
-}: {
+interface PlatformFeaturesSectionProps {
   className?: string;
-}) {
+  debug?: boolean;
+}
+
+export const PlatformFeaturesSection = ({
+  className = "",
+  debug = false,
+}: PlatformFeaturesSectionProps) => {
+  if (debug) console.log("Rendering PlatformFeaturesSection");
+
   return (
     <section className={`w-full px-12 ${className}`}>
       <div className="w-full max-w-7xl mx-auto px-6 py-24 bg-gradient-to-br from-lightGrey/90 via-mintAccent/40 to-tealAccent/20 rounded-xl relative">
@@ -207,4 +213,4 @@ export function PlatformFeaturesSection({
       </div>
     </section>
   );
-}
+};

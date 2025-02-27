@@ -25,6 +25,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.7",
+    "html2canvas": "^1.4.1",
     "lucide-react": "^0.303.0",
     "next": "14.0.4",
     "react": "18.2.0",

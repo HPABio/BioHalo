@@ -16,12 +16,16 @@ interface PollutionSection2Props {
     label: string | JSX.Element;
   }[];
   className?: string;
+  debug?: boolean;
 }
 
 export function PollutionSection2({
   stats,
   className = "",
+  debug = false,
 }: PollutionSection2Props) {
+  if (debug) console.log("Rendering PollutionSection2");
+
   const circleVariants = {
     hidden: { opacity: 0, scale: 0 },
     visible: (i: number) => ({
@@ -43,13 +47,15 @@ export function PollutionSection2({
     {
       stat: stats[2],
       // Moved to bottom-right position (was top-left)
-      position: "left-[calc(50%+67%)] top-[calc(50%+67%)] hidden lg:block lg:absolute  lg:flex",
+      position:
+        "left-[calc(50%+67%)] top-[calc(50%+67%)] hidden lg:block lg:absolute  lg:flex",
       size: `h-[${sizes[0]}] w-[${sizes[0]}]`,
     },
     {
       stat: stats[7],
       // Moved to top-left position (was bottom-right)
-      position: "left-[calc(50%-83%)] top-[calc(50%-83%)] hidden lg:block lg:absolute  lg:flex",
+      position:
+        "left-[calc(50%-83%)] top-[calc(50%-83%)] hidden lg:block lg:absolute  lg:flex",
       size: `h-[${sizes[1]}] w-[${sizes[1]}]`,
     },
     {
@@ -61,7 +67,8 @@ export function PollutionSection2({
     {
       stat: stats[3],
       // Bottom-left position
-      position: "left-[calc(50%-70%)] top-[calc(50%+70%)] hidden lg:block lg:absolute  lg:flex",
+      position:
+        "left-[calc(50%-70%)] top-[calc(50%+70%)] hidden lg:block lg:absolute  lg:flex",
       size: `h-[${sizes[3]}] w-[${sizes[3]}]`,
     },
   ];

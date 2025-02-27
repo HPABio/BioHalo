@@ -16,12 +16,16 @@ import logo from "@/assets/images/logo.png";
 interface WhatWeDoSectionProps {
   stats: any[];
   className?: string;
+  debug?: boolean;
 }
 
-export function WhatWeDoSection({
+export const WhatWeDoSection = ({
   stats,
-  className = "",
-}: WhatWeDoSectionProps) {
+  className,
+  debug = false,
+}: WhatWeDoSectionProps) => {
+  if (debug) console.log("Rendering WhatWeDoSection");
+
   const ref = useRef(null);
 
   return (
@@ -65,8 +69,10 @@ export function WhatWeDoSection({
           we are revolutionizing fluorine chemistry
         </h2>
         <h2 className="relative font-black font-arial text-6xl bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent pb-10">
-          <span className="font-poppins font-bold flex items-center -mb-14
-          text-black text-[clamp(110px,10vw,150px)] w-[560px]">
+          <span
+            className="font-poppins font-bold flex items-center -mb-14
+          text-black text-[clamp(110px,10vw,150px)] w-[560px]"
+          >
             BioHalo
             <Image
               src={BioHaloLogoOnly}
@@ -233,4 +239,4 @@ export function WhatWeDoSection({
       </div>
     </section>
   );
-}
+};

@@ -14,7 +14,17 @@ import Image from "next/image";
 import FollowPath from "../ui/FollowPath";
 import logo from "@/assets/images/logo.png";
 
-export function HeroSection5({ className }: { className?: string }) {
+interface HeroSection5Props {
+  className?: string;
+  debug?: boolean;
+}
+
+export const HeroSection5 = ({
+  className,
+  debug = false,
+}: HeroSection5Props) => {
+  if (debug) console.log("Rendering HeroSection5");
+
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
@@ -43,7 +53,7 @@ export function HeroSection5({ className }: { className?: string }) {
             colors={["#BCE2E2", "#E10C73", "#115e59", "#134e4a"]}
             // colors={["#E10C73", "#BCE2E2", "#115e59", "#134e4a"]}
             className="z-0 opacity-1"
-            debug={true}
+            debug={false}
           />
         </motion.div>
       </div>
@@ -189,4 +199,4 @@ export function HeroSection5({ className }: { className?: string }) {
       </div>
     </section>
   );
-}
+};

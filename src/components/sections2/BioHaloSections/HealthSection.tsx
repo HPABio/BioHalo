@@ -9,13 +9,19 @@ import Droplets1 from "@/assets/images/Droplets1.jpg";
 import EcoliTripletsSVG from "../../ui/EcoliTripletsSVG";
 import BGFabricTealPink from "@/assets/images/BGImagesTest/BGFabricTealPink.png";
 
-
 interface HealthSectionProps {
   stats: any[];
   className?: string;
+  debug?: boolean;
 }
- 
-export function HealthSectionImgLeft({ stats, className = "" }: HealthSectionProps) {
+
+export const HealthSectionImgLeft = ({
+  stats,
+  className = "",
+  debug = false,
+}: HealthSectionProps) => {
+  if (debug) console.log("Rendering HealthSectionImgLeft");
+
   const ref4 = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref4,
@@ -23,9 +29,7 @@ export function HealthSectionImgLeft({ stats, className = "" }: HealthSectionPro
   });
 
   return (
-    <main
-        className={`${className}`}
-    >
+    <main className={`${className}`}>
       {/*Two Columns HEALTH */}
       <div className="flex justify-end w-full border-2 border-lightGrey/0">
         <h1
@@ -33,8 +37,8 @@ export function HealthSectionImgLeft({ stats, className = "" }: HealthSectionPro
           font-black font-arial text-6xl bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent"
         >
           <span className="">
-            And also public health <br className="block lg:hidden xl:block" /> is{" "}
-            <br className="block lg:hidden" />
+            And also public health <br className="block lg:hidden xl:block" />{" "}
+            is <br className="block lg:hidden" />
             the{" "}
             <span className="bg-gradient-to-tr from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
               suffering
@@ -43,7 +47,6 @@ export function HealthSectionImgLeft({ stats, className = "" }: HealthSectionPro
         </h1>
       </div>
       <div className="flex justify-end w-full border-2 border-lightGrey/0">
-        
         {/* Left Column with Circle */}
         <div className="w-[600px] h-[600px] -translate-x-[10%] relative">
           <div className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
@@ -130,70 +133,74 @@ export function HealthSectionImgLeft({ stats, className = "" }: HealthSectionPro
 
       {/* Paradox Section */}
       <section className="hidden bg-red-500/0 w-full">
-      <div className=" w-full bg-red-500/0 mt-48 md:mt-32">
-        <h2 className="text-2xl font-black font-arial bg-gradient-to-tl from-tealAccent to-tealAccent/45 bg-clip-text text-transparent">
-          The Paradox of PFAS: Durability Meets Danger
-        </h2>
-      </div>
-      <div className="mt-10 md:mt-12 flex flex-row gap-8">
-        {/* left column */}
-        <div className="w-1/2">
-          <div className="space-y-4">
-            <p className="text-base">
-              PFAS (per- and polyfluoroalkyl substances) are celebrated for
-              their exceptional durability—largely due to the strong
-              carbon–fluorine bonds that make them almost impervious to natural
-              degradation. This resilience is precisely what makes them so
-              valuable across industries, powering everything from non-stick
-              cookware and waterproof fabrics to essential firefighting foams.
-            </p>
-            <p className="text-sm">
-              Emerging research underscores the importance of rethinking our use
-              of these chemicals and implementing comprehensive strategies to
-              monitor and mitigate their impact on public health. Addressing
-              this silent crisis is essential for a healthier future.
-            </p>
-            <p className="text-base">
-              However, this very durability turns PFAS into persistent
-              pollutants. Once released into the environment, PFAS can remain
-              for decades, "bioaccumulating" in water supplies and living
-              organisms. This persistence not only challenges cleanup efforts
-              but also raises serious health concerns, including hormone
-              disruption, immune system effects, and even links to certain
-              cancers. The striking dichotomy lies in the fact that the traits
-              which lend PFAS their industrial utility also embed long-lasting
-              risks to ecosystem and human health.
-            </p>
-          </div>
+        <div className=" w-full bg-red-500/0 mt-48 md:mt-32">
+          <h2 className="text-2xl font-black font-arial bg-gradient-to-tl from-tealAccent to-tealAccent/45 bg-clip-text text-transparent">
+            The Paradox of PFAS: Durability Meets Danger
+          </h2>
         </div>
+        <div className="mt-10 md:mt-12 flex flex-row gap-8">
+          {/* left column */}
+          <div className="w-1/2">
+            <div className="space-y-4">
+              <p className="text-base">
+                PFAS (per- and polyfluoroalkyl substances) are celebrated for
+                their exceptional durability—largely due to the strong
+                carbon–fluorine bonds that make them almost impervious to
+                natural degradation. This resilience is precisely what makes
+                them so valuable across industries, powering everything from
+                non-stick cookware and waterproof fabrics to essential
+                firefighting foams.
+              </p>
+              <p className="text-sm">
+                Emerging research underscores the importance of rethinking our
+                use of these chemicals and implementing comprehensive strategies
+                to monitor and mitigate their impact on public health.
+                Addressing this silent crisis is essential for a healthier
+                future.
+              </p>
+              <p className="text-base">
+                However, this very durability turns PFAS into persistent
+                pollutants. Once released into the environment, PFAS can remain
+                for decades, "bioaccumulating" in water supplies and living
+                organisms. This persistence not only challenges cleanup efforts
+                but also raises serious health concerns, including hormone
+                disruption, immune system effects, and even links to certain
+                cancers. The striking dichotomy lies in the fact that the traits
+                which lend PFAS their industrial utility also embed long-lasting
+                risks to ecosystem and human health.
+              </p>
+            </div>
+          </div>
 
-        {/* right column */}
-        <div className="w-1/2 bg-green-600/0 relative">
-          <div className="w-[900px] h-[900px] relative ml-auto translate-y-[15%] translate-x-[5%] bg-green-500/0">
-            <div className="opacity-1 absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
-              <Image
-                src={Droplets1}
-                alt="Droplets1"
-                className="object-cover w-full h-full"
-              />
-              <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 bg-tealAccent/40 mix-blend-color-multiply"></div>
-            </div>
-            <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 overflow-visible flex items-center justify-center">
-              <EcoliTripletsSVG className="w-[100%] h-[100%] translate-x-[-3%] translate-y-[2%] opacity-70 invert mix-blend-color-burn" />
+          {/* right column */}
+          <div className="w-1/2 bg-green-600/0 relative">
+            <div className="w-[900px] h-[900px] relative ml-auto translate-y-[15%] translate-x-[5%] bg-green-500/0">
+              <div className="opacity-1 absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
+                <Image
+                  src={Droplets1}
+                  alt="Droplets1"
+                  className="object-cover w-full h-full"
+                />
+                <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 bg-tealAccent/40 mix-blend-color-multiply"></div>
+              </div>
+              <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 overflow-visible flex items-center justify-center">
+                <EcoliTripletsSVG className="w-[100%] h-[100%] translate-x-[-3%] translate-y-[2%] opacity-70 invert mix-blend-color-burn" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </section>
     </main>
   );
-}
+};
 
+export const HealthSectionImgRight = ({
+  stats,
+  className = "",
+  debug = false,
+}: HealthSectionProps) => {
+  if (debug) console.log("Rendering HealthSectionImgRight");
 
-
-
-
-export function HealthSectionImgRight({ stats, className = "" }: HealthSectionProps) {
   const ref4 = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref4,
@@ -204,36 +211,42 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
     <main className={`${className}`}>
       {/* Top Text */}
       <div className="flex justify-start  w-full border-2 border-lightGrey/0 relative">
-      <h1
-        className="absolute w-full lg:w-[80%] xl:pb-10 pb-2 font-black font-arial text-6xl text-center lg:text-left
-        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize">
-        <span className="">
-        But these special properties <br />
-         also make them <br /> hard to degrade and{" "}
+        <h1
+          className="absolute w-full lg:w-[80%] xl:pb-10 pb-2 font-black font-arial text-6xl text-center lg:text-left
+        bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize"
+        >
+          <span className="">
+            But these special properties <br />
+            also make them <br /> hard to degrade and{" "}
             <span className="bg-gradient-to-t from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
-            <br/>highly toxic 
+              <br />
+              highly toxic
+            </span>
           </span>
-        </span>
-      </h1>
-      <h1
-        className="w-full lg:w-[80%] xl:pb-10 pb-2 font-black font-arial text-6xl text-center lg:text-left
+        </h1>
+        <h1
+          className="w-full lg:w-[80%] xl:pb-10 pb-2 font-black font-arial text-6xl text-center lg:text-left
         bg-gradient-to-tl from-tealAccent to-tealAccent/30 bg-clip-text text-transparent capitalize
-        blur-[1px] opacity-70">
-        <span className="">
-        But these special properties <br />
-         also make them <br /> hard to degrade and{" "}
+        blur-[1px] opacity-70"
+        >
+          <span className="">
+            But these special properties <br />
+            also make them <br /> hard to degrade and{" "}
             <span className="bg-gradient-to-t from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
-            <br/>highly toxic 
+              <br />
+              highly toxic
+            </span>
           </span>
-        </span>
-      </h1>
+        </h1>
       </div>
 
-{/*Two Columns HEALTH */}
+      {/*Two Columns HEALTH */}
       <div className="flex flex-col lg:flex-row-reverse justify-end w-full border-2 border-lightGrey/0 lg:pr-12 px-4">
         {/* Right Column with Circle */}
-        <div className="hidden w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
-            mx-auto lg:translate-x-[10%] relative lg:mt-0 mt-20">
+        <div
+          className="hidden w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
+            mx-auto lg:translate-x-[10%] relative lg:mt-0 mt-20"
+        >
           <div className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
             <Image
               src={WaterRepellantFabric}
@@ -241,8 +254,10 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
               className="object-cover w-full h-full"
             />
           </div>
-          <div className="absolute h-full w-full rounded-full left-0 top-0 overflow-hidden 
-              flex items-center justify-center bg-gradient-to-tr from-black via-black/20 to-tealAccent/0">
+          <div
+            className="absolute h-full w-full rounded-full left-0 top-0 overflow-hidden 
+              flex items-center justify-center bg-gradient-to-tr from-black via-black/20 to-tealAccent/0"
+          >
             <Image
               src={Pharma}
               alt="BioHaloStep1"
@@ -285,27 +300,28 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
           </div>
         </div>
 
-         {/* Alt Right Column with Circle */}
-         <div className="w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
-            mx-auto lg:translate-x-[10%] relative lg:mt-0 mt-20">
-                    {/* small circle */}
-                      <div
-                    className="absolute w-[40%] aspect-square lg:h-[350px] lg:w-[350px] 
+        {/* Alt Right Column with Circle */}
+        <div
+          className="w-full max-w-[450px] lg:max-w-[600px] aspect-square lg:w-[600px] lg:h-[600px] 
+            mx-auto lg:translate-x-[10%] relative lg:mt-0 mt-20"
+        >
+          {/* small circle */}
+          <div
+            className="absolute w-[40%] aspect-square lg:h-[350px] lg:w-[350px] 
                         rounded-full right-[64%] top-[30%] lg:top-[50%] 
                         lg:translate-y-[-50%]
                         overflow-hidden flex items-center justify-center"
-                    style={{
-                      backgroundImage: `url(${BGFabricTealPink.src})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    {/* <div
+            style={{
+              backgroundImage: `url(${BGFabricTealPink.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* <div
                       className="absolute w-full h-full inset-0 rounded-full overflow-hidden
                       bg-gradient-to-tr from-black via-black/50 to-tealAccent/0 mix-blend-multiply"
                     /> */}
-                    
-                  </div>
+          </div>
           <div className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
             <Image
               src={WaterRepellantFabric}
@@ -314,9 +330,11 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent" />
           </div>
-          
-          <div className="absolute h-full w-full rounded-full left-0 top-0 overflow-hidden 
-              flex flex-col items-center justify-center">
+
+          <div
+            className="absolute h-full w-full rounded-full left-0 top-0 overflow-hidden 
+              flex flex-col items-center justify-center"
+          >
             <div className="relative w-[80%] h-[80%] flex items-center justify-center">
               <Image
                 src={Pharma}
@@ -324,7 +342,7 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
                 className="w-full h-full object-contain -translate-y-[7%]"
               />
             </div>
-            
+
             <motion.div
               ref={ref4}
               className="absolute w-full h-full inset-0 rounded-full overflow-hidden 
@@ -347,13 +365,7 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
               />
             </div>
           </div>
-          
-          
         </div>
-
-
-
-
 
         {/* Left Column with Text */}
         <div className="w-full lg:w-1/2 space-y-8 lg:space-y-12 mt-8 lg:mt-16">
@@ -361,8 +373,10 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
             <h3 className="text-gray-800/80 text-3xl lg:text-4xl text-center lg:text-left">
               Persistent Pollutants <br /> with hidden health risks
             </h3>
-            <p className="max-w-prose lg:max-w-sm text-gray-800/60 text-center lg:text-left 
-                text-lg lg:text-xl mx-auto lg:mx-0">
+            <p
+              className="max-w-prose lg:max-w-sm text-gray-800/60 text-center lg:text-left 
+                text-lg lg:text-xl mx-auto lg:mx-0"
+            >
               PFAS compounds, while boosting industrial performance, remain in
               our environment for decades. Their incredible durability has
               become a double-edged sword, as persistent exposure is now linked
@@ -441,16 +455,16 @@ export function HealthSectionImgRight({ stats, className = "" }: HealthSectionPr
       </section>
     </main>
   );
-}
+};
 
-
-export function HealthSectionBACKUP({ stats, className = "" }: HealthSectionProps) {
+export function HealthSectionBACKUP({
+  stats,
+  className = "",
+}: HealthSectionProps) {
   const ref4 = useRef(null);
 
   return (
-    <main
-        className={`${className}`}
-    >
+    <main className={`${className}`}>
       {/*Two Columns HEALTH */}
       <div className="flex justify-end w-full border-2 border-lightGrey/0">
         <h1
@@ -458,8 +472,8 @@ export function HealthSectionBACKUP({ stats, className = "" }: HealthSectionProp
           font-black font-arial text-6xl bg-gradient-to-tl from-tealAccent to-tealAccent/60 bg-clip-text text-transparent"
         >
           <span className="">
-            And also public health <br className="block lg:hidden xl:block" /> is{" "}
-            <br className="block lg:hidden" />
+            And also public health <br className="block lg:hidden xl:block" />{" "}
+            is <br className="block lg:hidden" />
             the{" "}
             <span className="bg-gradient-to-tr from-pinkAccent to-tealAccent/30 bg-clip-text text-transparent">
               suffering
@@ -468,7 +482,6 @@ export function HealthSectionBACKUP({ stats, className = "" }: HealthSectionProp
         </h1>
       </div>
       <div className="flex justify-end w-full border-2 border-lightGrey/0">
-        
         {/* Left Column with Circle */}
         <div className="w-[600px] h-[600px] -translate-x-[10%] relative">
           <div className="absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
@@ -554,60 +567,62 @@ export function HealthSectionBACKUP({ stats, className = "" }: HealthSectionProp
 
       {/* Paradox Section */}
       <section className="hidden bg-red-500/0 w-full">
-      <div className=" w-full bg-red-500/0 mt-48 md:mt-32">
-        <h2 className="text-2xl font-black font-arial bg-gradient-to-tl from-tealAccent to-tealAccent/45 bg-clip-text text-transparent">
-          The Paradox of PFAS: Durability Meets Danger
-        </h2>
-      </div>
-      <div className="mt-10 md:mt-12 flex flex-row gap-8">
-        {/* left column */}
-        <div className="w-1/2">
-          <div className="space-y-4">
-            <p className="text-base">
-              PFAS (per- and polyfluoroalkyl substances) are celebrated for
-              their exceptional durability—largely due to the strong
-              carbon–fluorine bonds that make them almost impervious to natural
-              degradation. This resilience is precisely what makes them so
-              valuable across industries, powering everything from non-stick
-              cookware and waterproof fabrics to essential firefighting foams.
-            </p>
-            <p className="text-sm">
-              Emerging research underscores the importance of rethinking our use
-              of these chemicals and implementing comprehensive strategies to
-              monitor and mitigate their impact on public health. Addressing
-              this silent crisis is essential for a healthier future.
-            </p>
-            <p className="text-base">
-              However, this very durability turns PFAS into persistent
-              pollutants. Once released into the environment, PFAS can remain
-              for decades, "bioaccumulating" in water supplies and living
-              organisms. This persistence not only challenges cleanup efforts
-              but also raises serious health concerns, including hormone
-              disruption, immune system effects, and even links to certain
-              cancers. The striking dichotomy lies in the fact that the traits
-              which lend PFAS their industrial utility also embed long-lasting
-              risks to ecosystem and human health.
-            </p>
-          </div>
+        <div className=" w-full bg-red-500/0 mt-48 md:mt-32">
+          <h2 className="text-2xl font-black font-arial bg-gradient-to-tl from-tealAccent to-tealAccent/45 bg-clip-text text-transparent">
+            The Paradox of PFAS: Durability Meets Danger
+          </h2>
         </div>
+        <div className="mt-10 md:mt-12 flex flex-row gap-8">
+          {/* left column */}
+          <div className="w-1/2">
+            <div className="space-y-4">
+              <p className="text-base">
+                PFAS (per- and polyfluoroalkyl substances) are celebrated for
+                their exceptional durability—largely due to the strong
+                carbon–fluorine bonds that make them almost impervious to
+                natural degradation. This resilience is precisely what makes
+                them so valuable across industries, powering everything from
+                non-stick cookware and waterproof fabrics to essential
+                firefighting foams.
+              </p>
+              <p className="text-sm">
+                Emerging research underscores the importance of rethinking our
+                use of these chemicals and implementing comprehensive strategies
+                to monitor and mitigate their impact on public health.
+                Addressing this silent crisis is essential for a healthier
+                future.
+              </p>
+              <p className="text-base">
+                However, this very durability turns PFAS into persistent
+                pollutants. Once released into the environment, PFAS can remain
+                for decades, "bioaccumulating" in water supplies and living
+                organisms. This persistence not only challenges cleanup efforts
+                but also raises serious health concerns, including hormone
+                disruption, immune system effects, and even links to certain
+                cancers. The striking dichotomy lies in the fact that the traits
+                which lend PFAS their industrial utility also embed long-lasting
+                risks to ecosystem and human health.
+              </p>
+            </div>
+          </div>
 
-        {/* right column */}
-        <div className="w-1/2 bg-green-600/0 relative">
-          <div className="w-[900px] h-[900px] relative ml-auto translate-y-[15%] translate-x-[5%] bg-green-500/0">
-            <div className="opacity-1 absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
-              <Image
-                src={Droplets1}
-                alt="Droplets1"
-                className="object-cover w-full h-full"
-              />
-              <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 bg-tealAccent/40 mix-blend-color-multiply"></div>
-            </div>
-            <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 overflow-visible flex items-center justify-center">
-              <EcoliTripletsSVG className="w-[100%] h-[100%] translate-x-[-3%] translate-y-[2%] opacity-70 invert mix-blend-color-burn" />
+          {/* right column */}
+          <div className="w-1/2 bg-green-600/0 relative">
+            <div className="w-[900px] h-[900px] relative ml-auto translate-y-[15%] translate-x-[5%] bg-green-500/0">
+              <div className="opacity-1 absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey">
+                <Image
+                  src={Droplets1}
+                  alt="Droplets1"
+                  className="object-cover w-full h-full"
+                />
+                <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 bg-tealAccent/40 mix-blend-color-multiply"></div>
+              </div>
+              <div className="opacity-1 absolute h-full w-full rounded-full left-0 top-0 overflow-visible flex items-center justify-center">
+                <EcoliTripletsSVG className="w-[100%] h-[100%] translate-x-[-3%] translate-y-[2%] opacity-70 invert mix-blend-color-burn" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </section>
     </main>
   );

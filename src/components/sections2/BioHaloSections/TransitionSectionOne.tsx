@@ -3,6 +3,7 @@ import { PeriodicTable } from "@/components/sections2/PeriodicTable";
 import BioHaloBackground from "@/assets/images/BioHalo-background-compressed.jpeg";
 import WaterRepellantFabric from "@/assets/images/water-repellant-fabric.png";
 import EcoliTripletsSVG from "@/components/ui/EcoliTripletsSVG";
+import { RasterizeComponent } from "@/components/ui/RasterizeComponent";
 
 
 
@@ -40,23 +41,58 @@ export function TransitionSectionOne({ className = "" }: { className?: string })
                                             />
 
                                   {/* Circle 4 V2 */}
-                                  <div className=" w-[1200px] h-[1200px] absolute top-[0%] right-[0%]
-                                  -translate-x-[40%] -translate-y-[20%]">
-                                        <div className="opacity-1 absolute w-full h-full rounded-full overflow-hidden border-2 border-lightGrey/40 ">
-                                          <Image
-                                            src={WaterRepellantFabric}
-                                            alt="WaterRepellantFabric"
-                                            className="object-cover w-full h-full -translate-y-[20%] "
+                                  <div className="w-[1200px] h-[1200px] absolute top-[0%] right-[0%] -translate-x-[40%] -translate-y-[20%]">
+                                    <RasterizeComponent
+                                      debug={true}
+                                      quality={2}
+                                      rasterizeDelay={2000}
+                                      shouldRasterize={false}
+                                      forceWidth={1200}
+                                      forceHeight={1200}
+                                      maxRetries={5}
+                                      saveToAssets={false}
+                                      componentName="TransitionSectionOne_Circle4"
+                                    >
+                                      <div 
+                                        className="relative w-[1200px] h-[1200px] grid place-items-center rounded-full overflow-hidden
+                                        before:content-[''] before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-tr before:from-tealAccent before:via-tealAccent before:to-mintAccent before:mix-blend-multiply before:opacity-60 before:z-10"
+                                      >
+                                        {/* Background Image */}
+                                        <Image
+                                          src={WaterRepellantFabric}
+                                          alt="WaterRepellantFabric"
+                                          fill
+                                          priority
+                                          sizes="(max-width: 768px) 100vw, 1200px"
+                                          style={{ 
+                                            objectFit: "cover",
+                                            objectPosition: "center -20%"
+                                          }}
+                                          className="rounded-full z-0"
+                                        />
+
+                                        {/* Border Overlay */}
+                                        <div className="w-full h-full border-2 border-lightGrey/40 absolute inset-0 z-20"></div>
+
+                                        {/* EcoliTriplets Image */}
+                                        <div
+                                          className="w-[110%] h-[110%] min-w-[110%] min-h-[110%] 
+                                          absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-30"
+                                        >
+                                          <EcoliTripletsSVG
+                                            className="w-full h-full opacity-40 mix-blend-screen"
+                                            style={{
+                                              transform: "translate3d(-3%, 2%, 0) scale(1.1)",
+                                              willChange: "transform"
+                                            }}
                                           />
-                                          <div className="opacity-60 absolute h-full w-full rounded-full left-0 top-0 bg-gradient-to-tr from-tealAccent via-tealAccent to-mintAccent mix-blend-multiply"></div>
-                                        </div>
-                                        <div className="opacity-40 absolute h-full w-full rounded-full left-0 top-0 overflow-visible flex items-center justify-center">
-                                          <EcoliTripletsSVG className="w-[100%] h-[100%] translate-x-[-3%] translate-y-[2%] opacity-40 mix-blend-screen" />
                                         </div>
                                       </div>
+                                    </RasterizeComponent>
+                                  </div>
 
 
-                                          </div>
+                              </div>
                         </div>
               </div>
      
