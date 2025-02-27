@@ -6,7 +6,7 @@ import {
   useInView,
   useMotionValueEvent,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { AnimatedCounterScroll } from "./AnimatedCounterScroll";
 
 export interface StatsBoxProps {
@@ -45,17 +45,6 @@ export function StatsBox({
   });
   const animationRef = useRef<{ stop: () => void } | null>(null);
   const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Stop animations when component is out of view
-  useEffect(() => {
-    if (!isInView && animationRef.current) {
-      animationRef.current.stop();
-    }
-  }, [isInView]);
 
   return (
     <motion.div
@@ -104,6 +93,13 @@ export function SimpleStatsBox({
   ratchet = false,
 }: StatsBoxProps) {
   const componentRef = useRef(null);
+
+  // Memoize the stat values to prevent unnecessary recalculations
+  const memoizedStatNumber = useMemo(() => stat.number, [stat.number]);
+  const memoizedStatPrefix = useMemo(() => stat.prefix, [stat.prefix]);
+  const memoizedStatSuffix = useMemo(() => stat.suffix, [stat.suffix]);
+  const memoizedStatLabel = useMemo(() => stat.label, [stat.label]);
+
   const progress = useTransform(
     scrollYProgress,
     [0, scrollEndThreshold],
@@ -111,9 +107,9 @@ export function SimpleStatsBox({
     { clamp: true }
   );
 
-
+  // Use the memoized stat number for the transformation
   const rounded = useTransform(progress, (latest) => {
-    const numericValue = parseInt(stat.number);
+    const numericValue = parseInt(memoizedStatNumber);
     return Math.round(isNaN(numericValue) ? 0 : numericValue * latest);
   });
 
@@ -128,12 +124,12 @@ export function SimpleStatsBox({
     >
       <h3 className={classNamesTitle}>
         <span>
-          {stat.prefix}
+          {memoizedStatPrefix}
           <motion.span>{rounded}</motion.span>
-          {stat.suffix}
+          {memoizedStatSuffix}
         </span>
       </h3>
-      <p className={classNamesSubTitle}>{stat.label}</p>
+      <p className={classNamesSubTitle}>{memoizedStatLabel}</p>
       {text && <p className="text-white/80 text-sm mt-4">{text}</p>}
     </motion.div>
   );
